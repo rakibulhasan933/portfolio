@@ -1,6 +1,6 @@
 import React from "react";
 import SkillText from "./SkillText";
-import { Backend_skill, Frontend_skill, Full_stack, Other_skill, Skill_data } from "@/utlis/fackdata";
+import { Backend_skill, Frontend_skill, Full_stack, Other_skill, Skill_data } from "@/utils/fackdata";
 import SkillData from "./SkillData";
 
 

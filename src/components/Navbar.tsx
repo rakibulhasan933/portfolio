@@ -1,4 +1,4 @@
-import { Socials } from "@/utlis/fackdata";
+import { Socials } from "@/utils/fackdata";
 import Image from "next/image";
 import React from "react";
 
