@@ -1,17 +1,16 @@
-import Encryption from "@/components/Encryption";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Project";
-import Skills from "@/components/Skills";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
-    <main className='h-full w-full'>
-      <div className="flex flex-col gap-20">
-        <Hero />
-        <Skills />
-        <Encryption />
-        <Projects />
-      </div>
+    <main>
+      <section className="h-[100px]">
+        <Header />
+      </section>
+      <section className="h-screen">About</section>
+      <section className="h-screen">Parallax</section>
+      <section className="h-screen">services</section>
+      <section className="h-screen">Portfolio</section>
+      <section className="h-screen">contact</section>
     </main>
   )
 }
