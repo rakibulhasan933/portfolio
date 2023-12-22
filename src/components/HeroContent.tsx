@@ -2,7 +2,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motion';
-import { SparklesIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 
 function HeroContent() {
@@ -10,22 +9,16 @@ function HeroContent() {
 		<motion.div
 			initial="hidden"
 			animate="visible"
-			className='flex flex-row items-center justify-center px-4 mt-20 w-full z-[20]'
+			className='flex flex-row items-center justify-center px-4 w-full z-[20]'
 		>
-			<div className=' h-full w-full flex flex-col gap-2 justify-center m-auto text-start'>
-				<motion.div
-					variants={slideInFromTop}
-					className='Welcome-box py-[7px] px-[4px] border boder-[#7042f88b] opacity-[0.9]'
-				>
-					<SparklesIcon className=' text-[#b49bff] mr-[10px] h-5 w-5' />
-					<h1 className="Welcome-text text-[13px]">Full Stack Developer</h1>
-				</motion.div>
+			<div className='flex flex-col justify-around w-full h-full gap-2 basis-1/2 text-start'>
 				<motion.div
 					variants={slideInFromLeft(0.5)}
-					className='text-lg text-gray-400 my-5 max-w-[600px]'
+					className='text-2xl font-semibold text-gray-400 my-5 max-w-[600px]'
 				>
-					I&apos;m a Full Stack Software Engineer with experience in Website,
-					Mobile, and Software development. Check out my projects and skills.
+					Hi, I&apos;m
+					<br />
+					<span className="text-2xl font-bold uppercase md:text-5xl">Rakibul Hasan <br /> Rakib</span>
 				</motion.div>
 				<motion.a
 					variants={slideInFromLeft(1)}
@@ -36,13 +29,13 @@ function HeroContent() {
 			</div>
 			<motion.div
 				variants={slideInFromRight(0.8)}
-				className="w-full h-full flex justify-center items-center"
+				className="flex items-center justify-center w-full h-full basis-1/2"
 			>
 				<Image
 					src="/mainIconsdark.svg"
 					alt="work icons"
-					height={650}
-					width={650}
+					height={300}
+					width={400}
 				/>
 			</motion.div>
 		</motion.div >
