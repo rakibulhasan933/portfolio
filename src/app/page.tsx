@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <div className="my-[30px]">
+      <div className="my-[30px] px-[150px]">
         <Header />
       </div>
     </main>
