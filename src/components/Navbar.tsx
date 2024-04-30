@@ -13,7 +13,7 @@ import { Menu } from 'lucide-react';
 
 function Navbar() {
 	return (
-		<div className='px-[50px] h-[100px] flex flex-row items-center justify-between'>
+		<div className='md:px-[50px] px-4 md:h-[100px] h-[60px] flex flex-row items-center justify-between'>
 			<div className=" text-color-text">
 				<Link href="/">
 					<Image src='/logo.png' alt='logo' width={50} height={50} className='' />

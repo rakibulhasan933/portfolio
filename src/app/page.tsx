@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main>
+    <main className="py-4">
       <Navbar />
-      <div className="my-[30px] px-[150px]">
+      <div className="my-[30px] px-4  md:px-[150px]">
         <Header />
       </div>
     </main>
