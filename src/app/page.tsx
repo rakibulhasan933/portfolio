@@ -1,8 +1,13 @@
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main className="px-[50px]">
-      <h2 className=" text-color-text text-3xl">Hello Word</h2>
+    <main>
+      <Navbar />
+      <div className="my-[30px] px-[150px]">
+        <Header />
+      </div>
     </main>
   );
 }
