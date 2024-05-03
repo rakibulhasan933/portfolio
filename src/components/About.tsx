@@ -4,12 +4,14 @@ import photo from '../../public/profile-photo.jpeg'
 
 function About() {
 	return (
-		<section className='py-8 px-10'>
+		<section id='about' className='py-8 px-10'>
 			<h2 className="md:text-[30px]  text-[20px] text-gray-300 py-6"><span className=" text-emerald-400 mr-3">01.</span>About</h2>
 			<div className=" flex flex-row gap-x-3 text-gray-300">
 				<div className="basis-2/3 pr-4">
-					<p className="text-[18px] font-normal">Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
-					<p className=" text-[18px] font-normal">Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.</p>
+					<h2 className=' text-gray-300 py-4 text-[24px]'><span className='mr-1  font-medium text-color-sub'>Rakibul Hasan</span>| Full-Stack Web Developer</h2>
+					<p className="text-[18px] font-normal">I craft user-friendly and interactive web experiences with a passion for problem-solving.  My expertise in both front-end and back-end development allows me to bring websites to life, from design and functionality to data and security.  I enjoy collaborating with clients to translate their needs into powerful tools that help businesses thrive.  Always eager to learn and create, I&apos;m excited to tackle your next project !</p>
+					<p className="text-[18px] font-normal">I possess expertise in various <span className=' font-medium text-color-sub'>framework</span> like <span className=' font-medium text-color-sub'>React.js(
+						library), Next.js, Node.js, express.js, </span>etc.</p>
 				</div>
 				<div className="basis-1/3 relative group">
 					<Image src={photo} className='transition delay-150 duration-300  group-hover:ease-in-out rounded-md absolute z-20 bottom-[20px] right-[20px]  group-hover:bottom-6  group-hover:right-6' placeholder='blur' alt='image' />
