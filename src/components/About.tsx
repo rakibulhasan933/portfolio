@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react'
 
 function About() {
 	return (
-		<section id='about' className='py-4 md:px-10 px-2'>
+		<section id='about' className='py-4 md:py-10 md:px-10 px-2'>
 			<h2 className="md:text-[30px]  text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 mr-3">01.</span>About</h2>
 			<div className=" flex md:flex-row flex-col gap-x-3 md:gap-1 gap-y-10 items-center text-gray-300">
 				<div className="basis-2/3 pr-2">
@@ -21,7 +21,7 @@ function About() {
 					</ul>
 				</div>
 				<div className="basis-1/3 relative group">
-					<Image src="/profile-photo.jpeg" width={340} height={280} className='transition delay-150 duration-300  group-hover:ease-in-out rounded-md absolute z-20 bottom-[20px] right-[20px]  group-hover:bottom-6  group-hover:right-6' alt='image' />
+					<Image src="/profile-photo.jpeg" width={340} height={280} className='transition delay-150 duration-300  group-hover:ease-in-out rounded-md absolute z-20 bottom-[12px] right-[14px]  group-hover:bottom-[20px]  group-hover:right-[20px]' alt='image' />
 					<div className="w-[320px] transition delay-150 duration-300  group-hover:ease-in-out  group-hover:w-[320px]  group-hover:border-emerald-300 h-[280px] border-[3px] rounded-md border-color-sub" />
 				</div>
 			</div>
