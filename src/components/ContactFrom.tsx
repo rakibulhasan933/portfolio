@@ -65,7 +65,7 @@ export function ContactFrom() {
 		const message = values.message;
 
 		mutate({ email, message }, {
-			onSuccess: ({ message }: { message: string }) => {
+			onSuccess: ({ message, result }: { message: any, result: any }) => {
 				toast("Message sent Successfully");
 				form.reset();
 			},
@@ -105,7 +105,9 @@ export function ContactFrom() {
 						</FormItem>
 					)}
 				/>
-				<Button className=' text-[15px] bg-inherit hover:bg-emerald-400 border-2 hover:text-black hover:border-emerald-400 border-emerald-400 pb-1 text-emerald-400' type="submit">Submit</Button>
+				{
+					isPending ? <Button disabled>Loading...</Button> : <Button className=' text-[15px] bg-inherit hover:bg-emerald-400 border-2 hover:text-black hover:border-emerald-400 border-emerald-400 pb-1 text-emerald-400' type="submit">Submit</Button>
+				}
 			</form>
 		</Form>
 	)

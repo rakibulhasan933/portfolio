@@ -13,7 +13,7 @@ function Contact() {
 				<div className="basis-1/2 bg-[#112240] p-4 rounded-md">
 					<ContactFrom />
 				</div>
-				<div className="basis-1/2">World Map</div>
+				<div className="basis-1/2"> Map</div>
 			</div>
 		</section>
 	)
