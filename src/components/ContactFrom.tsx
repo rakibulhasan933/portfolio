@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
+import { useRef } from "react"
 
 
 
@@ -31,6 +32,7 @@ const formSchema = z.object({
 })
 
 export function ContactFrom() {
+
 	// 1. Define your form.
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
@@ -44,8 +46,12 @@ export function ContactFrom() {
 	function onSubmit(values: z.infer<typeof formSchema>) {
 		// Do something with the form values.
 		// ✅ This will be type-safe and validated.
+
 		console.log(values)
-		toast("Your Message sent Successfully");
+
+		toast("Message sent Successfully");
+		form.reset();
+
 	}
 
 	return (
@@ -58,7 +64,7 @@ export function ContactFrom() {
 						<FormItem>
 							<FormLabel className="">Email</FormLabel>
 							<FormControl>
-								<Input className=" text-gray-300 font-medium" placeholder="email" {...field} />
+								<Input className=" border-2 border-color-sub text-gray-300 font-medium" placeholder="email" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
@@ -71,7 +77,7 @@ export function ContactFrom() {
 						<FormItem>
 							<FormLabel>Message</FormLabel>
 							<FormControl>
-								<Textarea className=" text-gray-300 font-medium" placeholder="Message" rows={6} {...field} />
+								<Textarea className=" border-2 border-color-sub text-gray-300 font-medium" placeholder="Message" rows={6} {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>

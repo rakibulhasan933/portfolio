@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Anek_Devanagari } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
+import TanStackProvider from "@/components/TanStackProvider";
+
 
 const inter = Anek_Devanagari({ subsets: ["latin"] });
 
@@ -18,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-color-main`}>
-        <main> {children}</main>
+        <TanStackProvider>{children}</TanStackProvider>
         <Toaster />
       </body>
     </html>
