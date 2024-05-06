@@ -1,4 +1,5 @@
 import React from 'react'
+import { ContactFrom } from './ContactFrom'
 
 function Contact() {
 	return (
@@ -9,7 +10,9 @@ function Contact() {
 				<p className="text-center text-[18px] font-normal text-gray-300 py-4 md:px-40">Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
 			</div>
 			<div className="flex flex-row gap-1">
-				<div className="basis-1/2">From</div>
+				<div className="basis-1/2 bg-[#112240] p-4 rounded-md">
+					<ContactFrom />
+				</div>
 				<div className="basis-1/2">World Map</div>
 			</div>
 		</section>
