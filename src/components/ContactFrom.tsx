@@ -17,8 +17,13 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
-import { useRef } from "react"
+import { useMutation } from "@tanstack/react-query"
+import axios from "axios"
 
+interface SendEmailIProps {
+	email: string,
+	message: string
+}
 
 
 const formSchema = z.object({
@@ -29,9 +34,21 @@ const formSchema = z.object({
 		message: "Email must be valid characters.",
 	}),
 
-})
+});
+
+
 
 export function ContactFrom() {
+
+	// Send FeedBack
+	const { mutate, isPending } = useMutation({
+		mutationFn: async ({ email, message }: SendEmailIProps) => {
+			const response = await axios.post("/api/send", {
+				email, message
+			});
+			return response.data;
+		},
+	});
 
 	// 1. Define your form.
 	const form = useForm<z.infer<typeof formSchema>>({
@@ -44,13 +61,18 @@ export function ContactFrom() {
 
 	// 2. Define a submit handler.
 	function onSubmit(values: z.infer<typeof formSchema>) {
-		// Do something with the form values.
-		// ✅ This will be type-safe and validated.
+		const email = values.email;
+		const message = values.message;
 
-		console.log(values)
-
-		toast("Message sent Successfully");
-		form.reset();
+		mutate({ email, message }, {
+			onSuccess: ({ message }: { message: string }) => {
+				toast("Message sent Successfully");
+				form.reset();
+			},
+			onError: (error) => {
+				toast("Message sent Failed try again");
+			}
+		});
 
 	}
 
