@@ -25,8 +25,8 @@ function Project() {
 								<div className="flex justify-end md:px-4 py-4 bg-[#112240] md:ml-[-60px] rounded">
 									<p className=' text-[#A8B2D1] font-normal'>A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.</p>
 								</div>
-								<div className="py-2 pl-1 flex flex-col gap-y-2">
-									<ul className=' text-color-sub  flex flex-row gap-x-1 justify-end'>
+								<div className="py-2 flex flex-col gap-y-2">
+									<ul className=' text-color-sub  flex flex-row gap-x-3 justify-end'>
 										<li>Typescript</li>
 										<li>Next.js</li>
 										<li>Node.js</li>
