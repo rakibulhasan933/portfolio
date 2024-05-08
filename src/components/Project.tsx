@@ -5,7 +5,7 @@ import React from 'react'
 
 function Project() {
 	return (
-		<section id='project' className='md:py-8 py-4 md:px-10 px-2'>
+		<div id='project' className='md:py-8 py-4 md:px-10 px-2'>
 			<h2 className="md:text-[30px]  text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 mr-3">03.</span>Some Things I’ve Built</h2>
 			{/* Project List */}
 			<div className="flex flex-col gap-4">
@@ -26,7 +26,7 @@ function Project() {
 									<p className=' text-[#A8B2D1] font-normal'>A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.</p>
 								</div>
 								<div className="py-2 flex flex-col gap-y-2">
-									<ul className=' text-color-sub text-[14px]  flex flex-row gap-x-2 justify-end'>
+									<ul className=' text-color-sub text-[14px] md:text-[16px]  flex flex-row gap-x-2 justify-end'>
 										<li>Typescript</li>
 										<li>Next.js</li>
 										<li>Node.js</li>
@@ -43,7 +43,7 @@ function Project() {
 					))
 				}
 			</div>
-		</section>
+		</div>
 	)
 }
 

@@ -4,7 +4,7 @@ import React from 'react'
 
 function ShortProject() {
 	return (
-		<section id='work' className='md:py-8 py-4 md:px-10 px-2'>
+		<div id='work' className='md:py-8 py-4 md:px-10 px-2'>
 			<h2 className=" text-gray-300 md:text-[38px] text-[24px] font-bold  text-center py-6">Other Noteworthy Projects</h2>
 			{/* Short Projects */}
 			<div className="grid md:grid-cols-3 grid-cols-1 items-center place-items-stretch gap-3">
@@ -32,7 +32,7 @@ function ShortProject() {
 					))
 				}
 			</div>
-		</section>
+		</div>
 	)
 }
 
