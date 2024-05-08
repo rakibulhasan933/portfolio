@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function Header() {
 	return (
-		<section className='md:mb-16 mb-4'>
+		<div className='md:mb-16 mb-4'>
 			<div className='flex flex-col md:gap-y-4 gap-y-2'>
 				<div className="flex flex-col md:leading-[78px] leading-relaxed gap-0">
 					<p className=" text-emerald-400 font-mono md:text-[20px] text-[16px] font-normal">Hi, my name is</p>
@@ -16,7 +16,7 @@ function Header() {
 					<Link href="https://www.linkedin.com/in/rakibulhossainrakib/">Hire me</Link>
 				</Button>
 			</div>
-		</section>
+		</div>
 	)
 }
 

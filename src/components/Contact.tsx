@@ -3,7 +3,7 @@ import { ContactFrom } from './ContactFrom'
 
 function Contact() {
 	return (
-		<section id='contact' className='md:py-8 py-4 md:px-10 px-2'>
+		<div id='contact' className='md:py-8 py-4 md:px-10 px-2'>
 			<div className="">
 				<p className="text-[16px] text-emerald-400 font-mono font-normal text-center py-5">4. What’s Next?</p>
 				<h2 className=" md:text-[60px] text-[40px] text-center font-bold text-gray-300 pb-1">Get In Touch</h2>
@@ -14,7 +14,7 @@ function Contact() {
 					<ContactFrom />
 				</div>
 			</div>
-		</section>
+		</div>
 	)
 }
 
