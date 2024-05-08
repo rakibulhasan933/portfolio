@@ -7,7 +7,7 @@ import ShortProject from "@/components/ShortProject";
 
 export default function Home() {
   return (
-    <main className="pt-4">
+    <main className="md:py-4 py-2">
       <Navbar />
       <div className="my-[30px] px-4  md:px-[150px]">
         <Header />
