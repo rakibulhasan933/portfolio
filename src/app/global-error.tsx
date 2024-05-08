@@ -12,10 +12,10 @@ export default function GlobalError({
 	return (
 		<html>
 			<body>
-				<div className="flex items-center justify-center min-h-[100vh] flex-col gap-2">
+				<div className="flex items-center text-gray-300 justify-center min-h-[100vh] flex-col gap-2">
 					<div className="space-y-2 text-center">
 						<h1 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl">Oops! Something went wrong.</h1>
-						<p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+						<p className="max-w-[600px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 							We apologize for the inconvenience.
 						</p>
 					</div>
