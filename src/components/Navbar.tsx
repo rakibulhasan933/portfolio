@@ -29,14 +29,16 @@ function Navbar() {
 			<div className="md:hidden">
 				<Sheet>
 					<SheetTrigger className='text-white'><Menu size={50} className=' text-2xl' /> </SheetTrigger>
-					<SheetContent side={"left"} className="w-[250px] sm:w-[250px]">
+					<SheetContent side={"left"} className="w-[250px] sm:w-[250px] bg-color-main text-gray-200">
 						<div className="py-8">
 							<div className="flex items-center justify-between flex-col gap-y-6">
 								<a href="#about" className=' hover:text-emerald-600'><span className="text-emerald-400 mr-[2px]">1.</span> About</a>
 								<a href="#experience" className=' hover:text-emerald-600'><span className="text-emerald-400 mr-[2px]">2.</span> Experience</a>
 								<a href="#work" className=' hover:text-emerald-600'><span className="text-emerald-400 mr-[2px]">3.</span> Work</a>
 								<a href="#contact" className=' hover:text-emerald-600'><span className="text-emerald-400 mr-[2px]">4.</span>  Contact</a>
-								<Button variant="outline" className=' text-[15px] bg-inherit hover:bg-emerald-400 border-2 hover:text-white hover:border-emerald-400 border-emerald-400 pb-1 text-emerald-400'>Resume</Button>
+								<Button variant="outline" className=' text-[15px] bg-inherit hover:bg-emerald-400 border-2 hover:text-white hover:border-emerald-400 border-emerald-400 pb-1 text-emerald-400' asChild>
+									<Link href={'https://drive.google.com/file/d/1JIXMMMMGNU9xdktwvHOJAI-dKak7ibc8/view'} >Resume</Link>
+								</Button>
 							</div>
 						</div>
 					</SheetContent>
