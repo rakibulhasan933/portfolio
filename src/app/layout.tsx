@@ -3,9 +3,15 @@ import { Anek_Devanagari } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner"
 import TanStackProvider from "@/components/TanStackProvider";
+import type { Viewport } from 'next'
 
 
 const inter = Anek_Devanagari({ subsets: ["latin"] });
+
+
+export const viewport: Viewport = {
+  themeColor: 'black',
+}
 
 export const metadata: Metadata = {
   title: "MD. Rakibul Hasan Portfolio",
