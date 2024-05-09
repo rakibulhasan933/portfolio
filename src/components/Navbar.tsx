@@ -16,7 +16,7 @@ function Navbar() {
 		<div className='md:px-[50px] px-4 md:h-[100px] h-[60px] flex flex-row items-center justify-between'>
 			<div className=" text-color-text">
 				<Link href="/">
-					<Image src='/logo.png' alt='logo' width={50} height={50} className='' />
+					<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src='/logo.png' alt='logo' width={50} height={50} className='' />
 				</Link>
 			</div>
 			<div className="text-color-text md:flex items-center justify-between  hidden flex-row gap-x-12">

@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={`${inter.className} bg-color-main`}>
         <TanStackProvider>{children}</TanStackProvider>
         <Toaster />

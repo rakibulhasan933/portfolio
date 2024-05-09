@@ -14,7 +14,7 @@ function Project() {
 						<div key={index} className="py-4 flex md:flex-row flex-col md:gap-x-1 gap-y-4">
 							<div className="md:basis-3/5 w-full">
 								<Link href="https://arafatfoundation.org" className=''>
-									<Image src="/project-1.png" className='rounded hover:text-orange-900  object-cover' width={580} height={362} alt='project' />
+									<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src="/project-1.png" className='rounded hover:text-orange-900  object-cover' width={580} height={362} alt='project' />
 								</Link>
 							</div>
 							<div className="md:basis-2/5 w-full flex flex-col justify-between">
