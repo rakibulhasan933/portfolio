@@ -21,8 +21,8 @@ function About() {
 					</ul>
 				</div>
 				<div className="basis-1/3 relative group">
-					<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src="/profile-photo.jpeg" width={340} height={280} className='transition delay-150 duration-300  group-hover:ease-in-out rounded-md absolute z-20 bottom-[12px] right-[14px]  group-hover:bottom-[20px]  group-hover:right-[20px]' alt='image' />
-					<div className="w-[320px] transition delay-150 duration-300  group-hover:ease-in-out  group-hover:w-[320px]  group-hover:border-emerald-300 h-[280px] border-[3px] rounded-md border-color-sub" />
+					<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src="/profile-photo.jpeg" width={340} height={280} className='transition  duration-200  group-hover:ease-in-out rounded-md absolute z-20 bottom-[12px] right-[14px]  group-hover:bottom-[20px]  group-hover:right-[20px]' alt='image' />
+					<div className="w-[320px] transition  duration-200  group-hover:ease-in-out  group-hover:w-[320px]  group-hover:border-emerald-300 h-[280px] border-[3px] rounded-md border-color-sub" />
 				</div>
 			</div>
 		</div>
