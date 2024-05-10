@@ -12,7 +12,7 @@ function Header() {
 					<h2 className="text-[#8892B0] md:text-[80px] text-[31px] font-bold">I build things for the web.</h2>
 				</div>
 				<p className=" text-[#B2BEDE] font-normal text-[18px]  mb-4">I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused  on building accessible, human-centered products. </p>
-				<Button variant="outline" asChild className=' bg-inherit hover:bg-emerald-400 border-2 hover:text-white hover:border-emerald-400 border-emerald-400  text-emerald-400  w-[120px] px-4 pt-3 text-[18px]'>
+				<Button variant="outline" asChild className=' bg-inherit hover:bg-emerald-400 border-2 hover:text-white hover:border-emerald-400 border-emerald-400  text-emerald-400  w-[120px] px-4 pt-3 text-[18px] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255)] transition duration-200'>
 					<Link href="https://www.linkedin.com/in/rakibulhossainrakib/">Hire me</Link>
 				</Button>
 			</div>
