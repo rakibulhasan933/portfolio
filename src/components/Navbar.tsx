@@ -24,7 +24,7 @@ function Navbar() {
 				<a href="#experience" className=' hover:text-emerald-600'><span className="text-emerald-400 mr-[2px]">2.</span> Experience</a>
 				<a href="#work" className=' hover:text-emerald-600'><span className="text-emerald-400 mr-[2px]">3.</span> Work</a>
 				<a href="#contact" className=' hover:text-emerald-600'><span className="text-emerald-400 mr-[2px]">4.</span> Contact</a>
-				<Button variant="outline" className=' text-[15px] bg-inherit hover:bg-emerald-400 border-2 hover:text-white hover:border-emerald-400 border-emerald-400 pb-1 text-emerald-400'>Resume</Button>
+				<Button variant="outline" className=' text-[15px] bg-inherit hover:bg-color-sub border-2 hover:text-white hover:border-color-sub border-color-sub pb-1 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255)] transition duration-200 text-color-sub'>Resume</Button>
 			</div>
 			<div className="md:hidden">
 				<Sheet>
