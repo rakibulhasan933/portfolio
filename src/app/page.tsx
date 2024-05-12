@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Project from "@/components/Project";
@@ -16,9 +17,7 @@ export default function Home() {
         <ShortProject />
         <Contact />
       </div>
-      <p className="text-center py-2 text-gray-300 text-[15px]  hover:text-emerald-400">
-        {new Date().getFullYear()} &copy;  Designed & Built by Rakibul Hasan
-      </p>
+      <Footer />
     </main>
   );
 }

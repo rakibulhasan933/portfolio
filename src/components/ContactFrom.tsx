@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import {
 	Form,
 	FormControl,
-	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
@@ -35,7 +34,6 @@ const formSchema = z.object({
 	}),
 
 });
-
 
 
 export function ContactFrom() {
@@ -86,7 +84,7 @@ export function ContactFrom() {
 						<FormItem>
 							<FormLabel className="">Email</FormLabel>
 							<FormControl>
-								<Input className=" border-2 border-color-sub text-gray-300 font-medium" placeholder="email" {...field} />
+								<Input className="border-2 border-color-sub text-gray-300 font-medium" placeholder="email" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
