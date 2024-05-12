@@ -10,7 +10,7 @@ function Contact() {
 				<p className="text-center text-[18px] font-normal text-gray-300 py-4 md:px-40">Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
 			</div>
 			<div className="flex  justify-center items-center gap-1">
-				<div className=" md:w-2/3 w-full bg-[#112240] p-4 rounded-md">
+				<div className=" md:w-2/3 w-full bg-[#112240] p-3 rounded-md">
 					<ContactFrom />
 				</div>
 			</div>
