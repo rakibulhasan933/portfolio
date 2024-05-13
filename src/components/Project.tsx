@@ -57,7 +57,7 @@ function SingleProject({ data, index }: { data: ProjectIProps, index: number }) 
 				trigger: `#${data.id}-heading`,
 				toggleActions: "restart none none none",
 
-			}, y: 100, scale: 1.2, opacity: 1, duration: 1.5
+			}, y: 100, scale: 1.2, opacity: 0, duration: 1.2
 		});
 	});
 	return <div className="py-4 flex md:flex-row flex-col md:gap-x-1 gap-y-4">
@@ -93,7 +93,7 @@ function Project() {
 
 	return (
 		<div id='project' className='md:py-8 py-4 md:px-10 px-2'>
-			<h2 className="md:text-[30px] flex flex-row  text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 mr-3">03.</span> <TextGenerateEffect words='Some Things I’ve Built' /> </h2>
+			<h2 className="md:text-[30px] flex flex-row  text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 mr-3"></span> <TextGenerateEffect words='Some Things I’ve Built' /> </h2>
 			{/* Project List */}
 			<div className="flex flex-col gap-4">
 				{
