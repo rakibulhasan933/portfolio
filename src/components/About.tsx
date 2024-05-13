@@ -15,7 +15,7 @@ function About() {
 				trigger: "#sub",
 				toggleActions: "restart none none none",
 			},
-			y: 200, scale: 2, duration: 1.5, opacity: 1
+			y: 150, scale: 1.8, duration: 1.5, opacity: 1
 		},);
 		gsap.fromTo("#image", {
 			scrollTrigger: {

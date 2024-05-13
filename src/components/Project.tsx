@@ -5,49 +5,98 @@ import Link from 'next/link'
 import React from 'react'
 import { TextGenerateEffect } from './ui/text-generate-effect'
 import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+interface ProjectIProps {
+	id: string,
+	name: string,
+	photoUrl: string,
+	description: string,
+	package: string[],
+	gitHub: string,
+	live: string,
+}
+
+const project: ProjectIProps[] = [
+	{
+		id: "arafat",
+		name: "Arafat Foundation LTD.",
+		photoUrl: "/project-1.png",
+		description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+		package: ["Typescript", "Next.js", "Node.js", "Mongodb", "Prisma"],
+		gitHub: "https://github.com/rakibulhasan933",
+		live: "https://arafatfoundation.org"
+	},
+	{
+		id: "arafat1",
+		name: "Arafat Foundation LTD.",
+		photoUrl: "/project-1.png",
+		description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+		package: ["Typescript", "Next.js", "Node.js", "Mongodb", "Prisma"],
+		gitHub: "https://github.com/rakibulhasan933",
+		live: "https://arafatfoundation.org"
+	},
+	{
+		id: "arafat2",
+		name: "Arafat Foundation LTD.",
+		photoUrl: "/project-1.png",
+		description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+		package: ["Typescript", "Next.js", "Node.js", "Mongodb", "Prisma"],
+		gitHub: "https://github.com/rakibulhasan933",
+		live: "https://arafatfoundation.org"
+	},
+
+];
+
+function SingleProject({ data, index }: { data: ProjectIProps, index: number }) {
+	useGSAP(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		gsap.from(`#${data.id}-heading`, {
+			scrollTrigger: {
+				trigger: `#${data.id}-heading`,
+				toggleActions: "restart none none none",
+			}, y: 100, scale: 1.2, opacity: 1, duration: 1.5
+		});
+	});
+	return <div className="py-4 flex md:flex-row flex-col md:gap-x-1 gap-y-4">
+		<div className="md:basis-3/5 w-full">
+			<Link href={data.live} >
+				<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={data.photoUrl} className='rounded hover:text-orange-900  object-cover' width={580} height={362} alt={data.name} />
+			</Link>
+		</div>
+		<div className="md:basis-2/5 w-full flex flex-col justify-between">
+			<div className="py-2">
+				<h2 className=" flex text-color-sub text-[15px] font-mono font-medium py-1 justify-end">Featured Project</h2>
+				<h2 id={`${data.id}-heading`} className="flex text-gray-300 text-[28px] justify-end font-semibold py-1">{data.name}</h2>
+			</div>
+			<div className="flex justify-end md:px-4 py-2 items-center bg-[#112240] md:ml-[-60px] rounded">
+				<p className=' text-[#A8B2D1] pt-3 font-normal'>{data.description}</p>
+			</div>
+			<div className="py-2 flex flex-col gap-y-2">
+				<ul className=' text-color-sub text-[14px] md:text-[16px]  flex flex-row gap-x-2 justify-end'>
+					{
+						data.package.map((item, index) => <li key={index}>{item}</li>)
+					}
+				</ul>
+				<div className=" text-white flex flex-row gap-x-4 justify-end px-2">
+					<Link href={data.gitHub}><Github className=' hover:text-emerald-400' /></Link>
+					<Link href={data.live}><ExternalLink className=' hover:text-emerald-400' /></Link>
+				</div>
+			</div>
+		</div>
+	</div>
+}
 
 function Project() {
-	useGSAP(() => {
-		gsap.fromTo("#name", { y: 300, scale: 2, opacity: 1, duration: 2 }, { y: 0, scale: 1, opacity: 1, duration: 2 });
-	});
+
 	return (
 		<div id='project' className='md:py-8 py-4 md:px-10 px-2'>
 			<h2 className="md:text-[30px] flex flex-row  text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 mr-3">03.</span> <TextGenerateEffect words='Some Things I’ve Built' /> </h2>
 			{/* Project List */}
 			<div className="flex flex-col gap-4">
 				{
-					Array.from({ length: 3 }).map((_, index) => (
-						<div key={index} className="py-4 flex md:flex-row flex-col md:gap-x-1 gap-y-4">
-							<div className="md:basis-3/5 w-full">
-								<Link href="https://arafatfoundation.org" className=''>
-									<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src="/project-1.png" className='rounded hover:text-orange-900  object-cover' width={580} height={362} alt='project' />
-								</Link>
-							</div>
-							<div className="md:basis-2/5 w-full flex flex-col justify-between">
-								<div className="py-2">
-									<h2 className=" flex text-color-sub text-[15px] font-mono font-medium py-1 justify-end">Featured Project</h2>
-									<h2 id='name' className="flex text-gray-300 text-[28px] justify-end font-semibold py-1">Arafat Foundation LTD.</h2>
-								</div>
-								<div className="flex justify-end md:px-4 py-4 bg-[#112240] md:ml-[-60px] rounded">
-									<TextGenerateEffect className=' text-[#A8B2D1] font-normal' words='A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.' />
-								</div>
-								<div className="py-2 flex flex-col gap-y-2">
-									<ul className=' text-color-sub text-[14px] md:text-[16px]  flex flex-row gap-x-2 justify-end'>
-										<li>Typescript</li>
-										<li>Next.js</li>
-										<li>Node.js</li>
-										<li>Mongodb</li>
-										<li>Prisma</li>
-									</ul>
-									<div className=" text-white flex flex-row gap-x-4 justify-end px-2">
-										<Link href="https://arafatfoundation.org"><Github className=' hover:text-emerald-400' /></Link>
-										<Link href="https://arafatfoundation.org"><ExternalLink className=' hover:text-emerald-400' /></Link>
-									</div>
-								</div>
-							</div>
-						</div>
-					))
+					project.map((data, index) => <SingleProject key={index} data={data} index={index} />)
 				}
 			</div>
 		</div>
