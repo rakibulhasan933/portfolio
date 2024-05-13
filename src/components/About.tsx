@@ -33,8 +33,8 @@ function About() {
 	});
 
 	return (
-		<div id='about' className='py-4 md:py-10 md:px-10 px-2'>
-			<h2 className="md:text-[30px]  flex flex-row text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 mr-3">01.</span><TextGenerateEffect words='About' /> </h2>
+		<div id='about' className='py-8 md:py-10 md:px-10 px-2'>
+			<h2 className="md:text-[30px]  flex flex-row text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 mr-3"></span><TextGenerateEffect words='About' /> </h2>
 			<div className=" flex md:flex-row flex-col gap-x-3 md:gap-1 gap-y-10 items-center text-gray-300">
 				<div className="basis-2/3  px-2">
 					<h2 id='sub' className=' text-gray-300 pb-[2px] text-[24px] leading-loose'><span className='mr-1 md:inline block  font-medium text-color-sub'>Rakibul Hasan</span>| Full-Stack Web Developer</h2>
