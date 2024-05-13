@@ -71,7 +71,7 @@ function SingleProject({ data, index }: { data: ProjectIProps, index: number }) 
 				<h2 className=" flex text-color-sub text-[15px] font-mono font-medium py-1 justify-end">Featured Project</h2>
 				<h2 id={`${data.id}-heading`} className="flex text-gray-300 text-[28px] justify-end font-semibold py-1">{data.name}</h2>
 			</div>
-			<div className="flex justify-end md:px-4 py-2 items-center bg-[#112240] md:ml-[-60px] rounded">
+			<div className="flex justify-end md:px-4 px-2 py-2 items-center bg-[#112240] md:ml-[-60px] rounded">
 				<p className=' text-[#A8B2D1] pt-3 font-normal'>{data.description}</p>
 			</div>
 			<div className="py-2 flex flex-col gap-y-2">
