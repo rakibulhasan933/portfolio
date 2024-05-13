@@ -22,13 +22,13 @@ function About() {
 				trigger: "#image",
 				toggleActions: "restart none none none",
 
-			}, y: 30, x: 30, scale: 1, duration: 1.5,
+			}, y: 30, x: 30, scale: 1, duration: 1,
 		}, {
 			scrollTrigger: {
 				trigger: "#image",
 				toggleActions: "restart none none none",
 
-			}, y: 0, x: 0, scale: 1, duration: 1.5
+			}, y: 0, x: 0, scale: 1, duration: 1
 		});
 	});
 
