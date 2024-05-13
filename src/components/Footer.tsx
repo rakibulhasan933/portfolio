@@ -12,7 +12,7 @@ function Footer() {
 				trigger: "#footer",
 				toggleActions: "restart none none none",
 
-			}, y: 300, scale: 2, opacity: 1, duration: 1.2
+			}, y: 0, scale: 2, opacity: 0, duration: 1
 		});
 	});
 	return (
