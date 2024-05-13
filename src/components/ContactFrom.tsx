@@ -84,7 +84,7 @@ export function ContactFrom() {
 						<FormItem>
 							<FormLabel className="">Email</FormLabel>
 							<FormControl>
-								<Input className="border-2 border-color-sub text-gray-300 font-medium" placeholder="email" {...field} />
+								<Input className="border-2 border-color-sub text-gray-300 font-medium" placeholder="Email" {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
