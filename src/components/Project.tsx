@@ -56,6 +56,7 @@ function SingleProject({ data, index }: { data: ProjectIProps, index: number }) 
 			scrollTrigger: {
 				trigger: `#${data.id}-heading`,
 				toggleActions: "restart none none none",
+				scrub: true
 			}, y: 100, scale: 1.2, opacity: 1, duration: 1.5
 		});
 	});

@@ -1,9 +1,5 @@
-"use client";
 import React from 'react'
 import SingleShortProject from './SingleShortProject'
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useGSAP } from '@gsap/react';
 
 
 export interface ShortIProps {
@@ -66,9 +62,6 @@ const short: ShortIProps[] = [
 	}
 ];
 
-function AnimationCard(data: ShortIProps) {
-	return <SingleShortProject data={data} />
-};
 
 function ShortProject() {
 	return (
@@ -77,11 +70,7 @@ function ShortProject() {
 			{/* Short Projects */}
 			<div id='all' className="grid md:grid-cols-3 grid-cols-1 items-center place-items-stretch gap-3">
 				{
-					short.map((item, index) => (
-						<div id='blog' key={index}>
-							{AnimationCard(item)}
-						</div>
-					))
+					short.map((item, index) => <SingleShortProject data={item} key={index} />)
 				}
 			</div>
 		</div>
