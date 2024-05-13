@@ -11,7 +11,7 @@ function Footer() {
 			scrollTrigger: {
 				trigger: "#footer",
 				toggleActions: "restart none none none",
-				scrub: true
+
 			}, y: -300, scale: 2, opacity: 1, duration: 1.5
 		});
 	});
