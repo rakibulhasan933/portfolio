@@ -23,28 +23,28 @@ const project: ProjectIProps[] = [
 		id: "arafat",
 		name: "Arafat Foundation LTD.",
 		photoUrl: "/project-1.png",
-		description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+		description: "Arafat Foundation is a non-political, non-profit organization dedicated to humanitarian services. It follows the teachings of Prophet Muhammad (PBUH) to aid humanity, reform society, create employment, alleviate poverty, and provide education and healthcare. The foundation aims to build an ideal welfare society through various charity and social welfare activities.",
 		package: ["Typescript", "Next.js", "Node.js", "Mongodb", "Prisma"],
-		gitHub: "https://github.com/rakibulhasan933",
+		gitHub: "",
 		live: "https://arafatfoundation.org"
 	},
 	{
 		id: "arafat1",
-		name: "Arafat Foundation LTD.",
-		photoUrl: "/project-1.png",
-		description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-		package: ["Typescript", "Next.js", "Node.js", "Mongodb", "Prisma"],
-		gitHub: "https://github.com/rakibulhasan933",
-		live: "https://arafatfoundation.org"
+		name: "Free Plan Tour.",
+		photoUrl: "https://i.ibb.co/9yqZTJ8/Screenshot-2024-07-15-182540.png",
+		description: "FreePlanTour offers free guided tours led by local experts in various cities. Travelers can explore destinations, learn about history and culture, and pay tips based on satisfaction. This approach aims to make travel accessible and enriching.",
+		package: ["Javascript", "Next.js", "Node.js", "Firebase", "Auth0"],
+		gitHub: "",
+		live: "https://www.freeplantour.com/en"
 	},
 	{
 		id: "arafat2",
-		name: "Arafat Foundation LTD.",
-		photoUrl: "/project-1.png",
-		description: "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-		package: ["Typescript", "Next.js", "Node.js", "Mongodb", "Prisma"],
-		gitHub: "https://github.com/rakibulhasan933",
-		live: "https://arafatfoundation.org"
+		name: "Doctors Portal.",
+		photoUrl: "https://i.ibb.co/DbHR9Dk/Screenshot-2024-07-15-183910.png",
+		description: "Doctors Walker is an online portal providing access to various healthcare services. It offers a platform for booking appointments, managing health records, and consulting with doctors. The site aims to streamline the healthcare process for patients and practitioners alike.",
+		package: ["Javascript", "React.js", "Node.js", "Mongodb", "Firebase"],
+		gitHub: "https://github.com/rakibulhasan933/doctors-portals-client",
+		live: "https://doctors-walker.web.app/"
 	},
 
 ];
