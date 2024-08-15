@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-color-main`}>
+      <body className={`${inter.className}`}>
         <TanStackProvider>{children}</TanStackProvider>
         <Toaster />
       </body>
