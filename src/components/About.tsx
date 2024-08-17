@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import NumericCounter from './ui/numeric-counter';
+import NumberTicker from './ui/numeric-counter';
 
 function About() {
 	useGSAP(() => {
@@ -56,17 +57,17 @@ function About() {
 				</div>
 			</div>
 			<div className="my-20 p-3 flex flex-col md:flex-row justify-around gap-3 z-10">
-				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed p-2  text-center">
-					<h3 className="text-xl text-white font-medium">Completed Projects</h3>
-					<h4 className="text-lg text-color-text">20+</h4>
+				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed py-3 px-2  text-center">
+					<h3 className="text-2xl uppercase text-white font-medium">Completed Projects</h3>
+					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker className=' text-gray-400' value={20} /> +</h4>
 				</div>
-				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed p-2  text-center">
-					<h3 className="text-xl text-white font-medium">Completed Projects</h3>
-					<h4 className="text-lg text-color-text">20+</h4>
+				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed py-3 px-2  text-center">
+					<h3 className="text-2xl uppercase text-white font-medium">Technologies</h3>
+					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker className=' text-gray-400' value={40} /> +</h4>
 				</div>
-				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed p-2  text-center">
-					<h3 className="text-xl text-white font-medium">Completed Projects</h3>
-					<h4 className="text-lg text-color-text">20+</h4>
+				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed py-3 px-2  text-center">
+					<h3 className="text-2xl uppercase text-white font-medium">Years of Experience</h3>
+					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker className=' text-gray-400' value={2} /> + year</h4>
 				</div>
 			</div>
 		</div>
