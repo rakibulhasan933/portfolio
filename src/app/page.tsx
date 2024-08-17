@@ -9,8 +9,10 @@ import { Boxes } from "@/components/ui/background-boxes";
 
 export default function Home() {
   return (
-    <main className="md:py-4 py-2">
-      <Boxes />
+    <main className="md:py-4 py-2 overflow-hidden">
+      <div className="hidden md:flex">
+        <Boxes />
+      </div>
       <Navbar />
       <div className="my-[30px] px-4  md:px-[150px]">
         <Header />

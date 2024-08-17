@@ -11,11 +11,11 @@ function Contact() {
 				<p className="text-center text-[18px] font-normal text-gray-300 py-4 md:px-40">Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
 			</div>
 
-			<div className=" w-full flex md:flex-row flex-col justify-center items-center gap-1 bg-[#112240] py-1 rounded-md">
-				<div className=" basis-1/2">
+			<div className=" w-full flex md:flex-row flex-col  items-center md:gap-1 gap-0 bg-[#112240] py-1 rounded-md">
+				<div className=" md:basis-1/2 w-full">
 					<GlobalMap />
 				</div>
-				<div className=" basis-1/2 px-4">
+				<div className="  md:basis-1/2 w-full">
 					<ContactFrom />
 				</div>
 			</div>
