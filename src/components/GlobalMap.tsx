@@ -395,8 +395,8 @@ export function GlobalMap() {
     ];
 
     return (
-        <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto  relative w-full">
-            <div className=" mx-auto w-full relative overflow-hidden h-full md:h-[40rem]">
+        <div className="flex flex-row items-center justify-center md:py-20 py-4  md:h-auto  relative w-full">
+            <div className=" mx-auto w-full relative overflow-hidden h-full md:h-[500px]">
                 <motion.div
                     initial={{
                         opacity: 0,
@@ -413,7 +413,7 @@ export function GlobalMap() {
                 >
                 </motion.div>
                 <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent z-40" />
-                <div className=" w-full -bottom-20 h-72 md:h-full z-10">
+                <div className=" w-full  h-72 md:h-[500px] z-10">
                     <World data={sampleArcs} globeConfig={globeConfig} />
                 </div>
             </div>
