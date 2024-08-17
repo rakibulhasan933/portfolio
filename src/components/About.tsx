@@ -6,6 +6,7 @@ import { TextGenerateEffect } from './ui/text-generate-effect';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import NumericCounter from './ui/numeric-counter';
 
 function About() {
 	useGSAP(() => {
@@ -52,6 +53,20 @@ function About() {
 				<div className="basis-1/3 relative group">
 					<Image id='image' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src="/profile-photo.jpeg" width={340} height={280} className='transition z-10 duration-200  group-hover:ease-in-out rounded-md absolute z-20 bottom-[12px] right-[14px]  group-hover:bottom-[20px]  group-hover:right-[20px]' alt='image' />
 					<div id='image-box' className="w-[320px] transition  duration-200  group-hover:ease-in-out  group-hover:w-[320px]  group-hover:border-emerald-300 z-10 h-[280px] border-[3px] rounded-md border-color-sub" />
+				</div>
+			</div>
+			<div className="my-20 p-3 flex flex-col md:flex-row justify-around gap-3 z-10">
+				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed p-2  text-center">
+					<h3 className="text-xl text-white font-medium">Completed Projects</h3>
+					<h4 className="text-lg text-color-text">20+</h4>
+				</div>
+				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed p-2  text-center">
+					<h3 className="text-xl text-white font-medium">Completed Projects</h3>
+					<h4 className="text-lg text-color-text">20+</h4>
+				</div>
+				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed p-2  text-center">
+					<h3 className="text-xl text-white font-medium">Completed Projects</h3>
+					<h4 className="text-lg text-color-text">20+</h4>
 				</div>
 			</div>
 		</div>
