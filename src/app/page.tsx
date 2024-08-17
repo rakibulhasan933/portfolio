@@ -12,10 +12,10 @@ import { ScrollProgressBar } from "@/components/ui/scroll-progress-bar";
 export default function Home() {
   return (
     <main className="md:py-4 py-2 overflow-hidden">
-      {/* <ScrollProgressBar className="top-[0px]" />
+      <ScrollProgressBar className="top-[0px]" />
       <div className="hidden md:flex">
         <Boxes />
-      </div> */}
+      </div>
       <Navbar />
       <div className="my-[30px] px-2  md:px-[150px]">
         <Header />
@@ -23,7 +23,7 @@ export default function Home() {
         <Skills />
         <Project />
         {/* <ShortProject /> */}
-        {/* <Contact /> */}
+        <Contact />
       </div>
       <Footer />
     </main>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { ContactFrom } from './ContactFrom'
 import { GlobalMap } from './GlobalMap'
 
@@ -13,7 +13,9 @@ function Contact() {
 
 			<div className=" w-full flex md:flex-row flex-col  items-center md:gap-1 gap-0 bg-[#112240] py-1 rounded-md">
 				<div className=" md:basis-1/2 w-full">
-					<GlobalMap />
+					<Suspense fallback={<h2>Loading...</h2>}>
+						<GlobalMap />
+					</Suspense>
 				</div>
 				<div className="  md:basis-1/2 w-full px-4">
 					<ContactFrom />
