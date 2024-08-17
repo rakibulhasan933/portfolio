@@ -15,7 +15,7 @@ function Contact() {
 				<div className=" md:basis-1/2 w-full">
 					<GlobalMap />
 				</div>
-				<div className="  md:basis-1/2 w-full">
+				<div className="  md:basis-1/2 w-full px-4">
 					<ContactFrom />
 				</div>
 			</div>
