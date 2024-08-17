@@ -61,12 +61,12 @@ function SingleProject({ data, index }: { data: ProjectIProps, index: number }) 
 		});
 	});
 	return <div className="py-4 flex md:flex-row flex-col md:gap-x-1 gap-y-4">
-		<div className="md:basis-3/5 w-full">
+		<div className="md:basis-3/5 z-10 w-full">
 			<Link href={data.live} >
-				<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={data.photoUrl} className='rounded hover:text-orange-900  object-cover' width={580} height={362} alt={data.name} />
+				<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={data.photoUrl} className='rounded  hover:text-orange-900  object-cover' width={580} height={362} alt={data.name} />
 			</Link>
 		</div>
-		<div className="md:basis-2/5 w-full flex flex-col justify-between">
+		<div className="md:basis-2/5 w-full z-10 flex flex-col justify-between">
 			<div className="py-2">
 				<h2 className=" flex text-color-sub text-[15px] font-mono font-medium py-1 justify-end">Featured Project</h2>
 				<h2 id={`${data.id}-heading`} className="flex text-gray-300 text-[28px] justify-end font-semibold py-1">{data.name}</h2>
@@ -93,7 +93,7 @@ function Project() {
 
 	return (
 		<div id='project' className='md:py-8 py-4 md:px-10 px-2'>
-			<h2 className="md:text-[30px] flex flex-row  text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 mr-3"></span> <TextGenerateEffect words='Some Things I’ve Built' /> </h2>
+			<h2 className="md:text-[30px] flex flex-row  text-[20px] text-gray-300 py-4"><span className=" text-emerald-400 z-10 mr-3"></span> <TextGenerateEffect words='Some Things I’ve Built' /> </h2>
 			{/* Project List */}
 			<div className="flex flex-col gap-4">
 				{
