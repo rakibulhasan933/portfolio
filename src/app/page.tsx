@@ -6,10 +6,12 @@ import Navbar from "@/components/Navbar";
 import Project from "@/components/Project";
 import ShortProject from "@/components/ShortProject";
 import { Boxes } from "@/components/ui/background-boxes";
+import { ScrollProgressBar } from "@/components/ui/scroll-progress-bar";
 
 export default function Home() {
   return (
-    <main className="md:py-4 py-2 overflow-hidden">
+    <main className="md:py-4 relative py-2 overflow-hidden">
+      <ScrollProgressBar className="top-[0px]" />
       <div className="hidden md:flex">
         <Boxes />
       </div>
