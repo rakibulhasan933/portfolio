@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Project from "@/components/Project";
 import ShortProject from "@/components/ShortProject";
+import Skills from "@/components/Skills";
 import { Boxes } from "@/components/ui/background-boxes";
 import { ScrollProgressBar } from "@/components/ui/scroll-progress-bar";
 
@@ -19,6 +20,7 @@ export default function Home() {
       <div className="my-[30px] px-2  md:px-[150px]">
         <Header />
         <About />
+        <Skills />
         <Project />
         {/* <ShortProject /> */}
         {/* <Contact /> */}

@@ -1,51 +1,55 @@
 "use client";
 
-import { motion, useSpring, useTransform, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useInView, useMotionValue, useSpring } from "framer-motion";
 
-interface CounterProps {
+import { cn } from "@/lib/utils";
+
+export default function NumberTicker({
+    value,
+    direction = "up",
+    delay = 0,
+    className,
+}: {
     value: number;
+    direction?: "up" | "down";
     className?: string;
-}
-
-export default function NumericCounter({ value, className }: CounterProps): React.JSX.Element {
-    const [previousValue, setPreviousValue] = useState(value);
-    const [change, setChange] = useState(0);
-    const [isIncrease, setIsIncrease] = useState(true);
-
-    const spring = useSpring(value, { mass: 0.8, stiffness: 75, damping: 15 });
-    const display = useTransform(spring, (current) =>
-        Math.round(current as number).toLocaleString(),
-    );
+    delay?: number; // delay in s
+}) {
+    const ref = useRef<HTMLSpanElement>(null);
+    const motionValue = useMotionValue(direction === "down" ? value : 0);
+    const springValue = useSpring(motionValue, {
+        damping: 60,
+        stiffness: 100,
+    });
+    const isInView = useInView(ref, { once: true, margin: "0px" });
 
     useEffect(() => {
-        const difference = value - previousValue;
-        if (difference !== 0) {
-            setChange(Math.abs(difference));
-            setIsIncrease(difference > 0);
-            setTimeout(() => setChange(0), 1000);
-        }
-        setPreviousValue(value);
-        spring.set(value);
-    }, [spring, value, previousValue]);
+        isInView &&
+            setTimeout(() => {
+                motionValue.set(direction === "down" ? 0 : value);
+            }, delay * 1000);
+    }, [motionValue, isInView, delay, value, direction]);
+
+    useEffect(
+        () =>
+            springValue.on("change", (latest) => {
+                if (ref.current) {
+                    ref.current.textContent = Intl.NumberFormat("en-US").format(
+                        Number(latest.toFixed(0)),
+                    );
+                }
+            }),
+        [springValue],
+    );
 
     return (
-        <div className={className}>
-            <motion.span>{display}</motion.span>
-            <AnimatePresence>
-                {change > 0 && (
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.5 }}
-                        className={`text-sm absolute -top-10 translate-x-1/2 ${isIncrease ? "text-gray-500" : "text-gray-500"
-                            }`}
-                    >
-                        {isIncrease ? "+" : "-"}{change.toLocaleString()}
-                    </motion.span>
-                )}
-            </AnimatePresence>
-        </div>
+        <span
+            className={cn(
+                "inline-block tabular-nums text-black dark:text-white tracking-wider",
+                className,
+            )}
+            ref={ref}
+        />
     );
 }
