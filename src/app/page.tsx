@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Project from "@/components/Project";
-import ShortProject from "@/components/ShortProject";
 import Skills from "@/components/Skills";
+import SocialMedia from "@/components/SocailMedia";
 import { Boxes } from "@/components/ui/background-boxes";
 import { ScrollProgressBar } from "@/components/ui/scroll-progress-bar";
 
@@ -16,16 +16,18 @@ export default function Home() {
       <div className="hidden md:flex">
         <Boxes />
       </div>
-      <Navbar />
-      <div className="my-[30px] px-2  md:px-[150px]">
-        <Header />
-        <About />
-        <Skills />
-        <Project />
-        {/* <ShortProject /> */}
-        <Contact />
+      <div className=" relative">
+        <SocialMedia />
+        <Navbar />
+        <div className="my-[30px] px-2  md:px-[150px]">
+          <Header />
+          <About />
+          <Skills />
+          <Project />
+          <Contact />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </main>
   );
 }
