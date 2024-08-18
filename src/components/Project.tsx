@@ -7,6 +7,7 @@ import { TextGenerateEffect } from './ui/text-generate-effect'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { BorderBeam } from './ui/border-beam';
 
 interface ProjectIProps {
 	id: string,
@@ -61,18 +62,19 @@ function SingleProject({ data, index }: { data: ProjectIProps, index: number }) 
 		});
 	});
 	return <div className="py-4 flex md:flex-row flex-col md:gap-x-1 gap-y-4">
-		<div className="md:basis-3/5 z-10 w-full">
+		<div className=" md:basis-3/5 z-10 w-full">
 			<Link href={data.live} >
 				<Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" src={data.photoUrl} className='rounded  hover:text-orange-900  object-cover' width={580} height={362} alt={data.name} />
 			</Link>
 		</div>
-		<div className="md:basis-2/5 w-full z-10 flex flex-col justify-between">
+		<div className="relative md:basis-2/5 w-full z-10 flex flex-col justify-between">
 			<div className="py-2">
 				<h2 className=" flex text-color-sub text-[15px] font-mono font-medium py-1 justify-end">Featured Project</h2>
 				<h2 id={`${data.id}-heading`} className="flex text-gray-300 text-[28px] justify-end font-semibold py-1">{data.name}</h2>
 			</div>
-			<div className="flex justify-end md:px-4 px-2 py-2 items-center bg-[#112240] md:ml-[-60px] rounded">
+			<div className=" relative flex justify-end md:px-4 px-2 py-2 items-center bg-[#112240] md:ml-[-60px] rounded">
 				<p className=' text-[#A8B2D1] pt-3 font-normal'>{data.description}</p>
+				<BorderBeam size={200} duration={20} delay={15} />
 			</div>
 			<div className="py-2 flex flex-col gap-y-2">
 				<ul className=' text-color-sub text-[14px] md:text-[16px]  flex flex-row gap-x-2 justify-end'>
