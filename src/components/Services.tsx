@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { BorderBeam } from "./ui/border-beam"
 
 export default function Services() {
     return (
@@ -14,7 +15,7 @@ export default function Services() {
                         </div>
                     </div>
                     <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
-                        <div className="grid gap-4 p-6  rounded-lg h-full z-10 bg-gray-700">
+                        <div className="relative grid gap-4 p-6  rounded-lg h-full z-10 bg-gray-700">
                             <div className="flex items-center gap-4">
                                 <div className="bg-primary rounded-md p-3 flex items-center justify-center">
                                     <CodeIcon className="w-6 h-6 text-primary-foreground" />
@@ -31,8 +32,10 @@ export default function Services() {
                             >
                                 Learn More
                             </Link>
+                            <BorderBeam size={250} duration={12} delay={9} />
                         </div>
-                        <div className="grid gap-4 p-6  bg-gray-700 rounded-lg h-full z-10">
+                        <div className=" relative grid gap-4 p-6  bg-gray-700 rounded-lg h-full z-10">
+                            <BorderBeam size={250} duration={12} delay={9} />
                             <div className="flex items-center gap-4">
                                 <div className="bg-primary rounded-md p-3 flex items-center justify-center">
                                     <BrushIcon className="w-6 h-6 text-primary-foreground" />
@@ -50,7 +53,8 @@ export default function Services() {
                                 Learn More
                             </Link>
                         </div>
-                        <div className="grid gap-4 p-6  bg-gray-700 rounded-lg h-full z-10">
+                        <div className="relative grid gap-4 p-6  bg-gray-700 rounded-lg h-full z-10">
+                            <BorderBeam size={250} duration={12} delay={9} />
                             <div className="flex items-center gap-4">
                                 <div className="bg-primary rounded-md p-3 flex items-center justify-center">
                                     <BriefcaseIcon className="w-6 h-6 text-primary-foreground" />
