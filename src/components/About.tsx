@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import NumericCounter from './ui/numeric-counter';
 import NumberTicker from './ui/numeric-counter';
+import { BorderBeam } from './ui/border-beam';
 
 function About() {
 	useGSAP(() => {
@@ -57,17 +58,20 @@ function About() {
 				</div>
 			</div>
 			<div className="my-20 p-3 flex flex-col md:flex-row justify-around gap-3 z-10">
-				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed py-3 px-2  text-center">
+				<div className=" relative md:basis-1/3 w-full rounded-sm bg-[#112240] py-3 px-2  text-center">
 					<h3 className="text-2xl uppercase text-white font-medium">Completed Projects</h3>
-					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker className=' text-gray-400' value={20} /> +</h4>
+					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker className=' text-gray-400' value={20} delay={3} /> +</h4>
+					<BorderBeam size={120} duration={20} delay={10} />
 				</div>
-				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed py-3 px-2  text-center">
+				<div className="relative md:basis-1/3 w-full rounded-sm bg-[#112240] py-3 px-2  text-center">
 					<h3 className="text-2xl uppercase text-white font-medium">Technologies</h3>
-					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker className=' text-gray-400' value={40} /> +</h4>
+					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker className=' text-gray-400' value={40} delay={4} /> +</h4>
+					<BorderBeam size={120} duration={20} delay={15} />
 				</div>
-				<div className=" basis-1/3 border-[2px] rounded-sm border-dashed py-3 px-2  text-center">
+				<div className=" relative md:basis-1/3 w-full rounded-sm bg-[#112240] py-3 px-2  text-center">
 					<h3 className="text-2xl uppercase text-white font-medium">Years of Experience</h3>
-					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker className=' text-gray-400' value={2} /> + year</h4>
+					<h4 className="text-xl text-color-text font-semibold"> <NumberTicker delay={5} className=' text-gray-400' value={2} /> + year</h4>
+					<BorderBeam size={120} duration={20} delay={20} />
 				</div>
 			</div>
 		</div>
