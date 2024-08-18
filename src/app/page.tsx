@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Project from "@/components/Project";
+import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import SocialMedia from "@/components/SocailMedia";
 import { Boxes } from "@/components/ui/background-boxes";
@@ -22,6 +23,7 @@ export default function Home() {
         <div className="my-[30px] px-2  md:px-[150px]">
           <Header />
           <About />
+          <Services />
           <Skills />
           <Project />
           <Contact />
