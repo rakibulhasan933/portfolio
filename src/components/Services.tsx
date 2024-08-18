@@ -32,10 +32,10 @@ export default function Services() {
                             >
                                 Learn More
                             </Link>
-                            <BorderBeam size={250} duration={12} delay={9} />
+                            <BorderBeam size={250} duration={20} delay={20} />
                         </div>
                         <div className=" relative grid gap-4 p-6  bg-gray-700 rounded-lg h-full z-10">
-                            <BorderBeam size={250} duration={12} delay={9} />
+                            <BorderBeam size={250} duration={20} delay={15} />
                             <div className="flex items-center gap-4">
                                 <div className="bg-primary rounded-md p-3 flex items-center justify-center">
                                     <BrushIcon className="w-6 h-6 text-primary-foreground" />
@@ -54,7 +54,7 @@ export default function Services() {
                             </Link>
                         </div>
                         <div className="relative grid gap-4 p-6  bg-gray-700 rounded-lg h-full z-10">
-                            <BorderBeam size={250} duration={12} delay={9} />
+                            <BorderBeam size={250} duration={20} delay={10} />
                             <div className="flex items-center gap-4">
                                 <div className="bg-primary rounded-md p-3 flex items-center justify-center">
                                     <BriefcaseIcon className="w-6 h-6 text-primary-foreground" />
