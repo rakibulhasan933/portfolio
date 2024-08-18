@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import { ContactFrom } from './ContactFrom'
 import { GlobalMap } from './GlobalMap'
+import { BorderBeam } from './ui/border-beam'
 
 function Contact() {
 	return (
@@ -11,14 +12,15 @@ function Contact() {
 				<p className="text-center text-[18px] font-normal text-gray-300 py-4 md:px-40">Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
 			</div>
 
-			<div className=" w-full flex md:flex-row flex-col  items-center md:gap-1 gap-0 bg-[#112240] py-1 rounded-md">
+			<div className=" w-full flex md:flex-row flex-col  items-center md:gap-1 gap-0 bg-[#112240] px-2 rounded-md">
 				<div className=" md:basis-1/2 w-full">
 					<Suspense fallback={<h2>Loading...</h2>}>
 						<GlobalMap />
 					</Suspense>
 				</div>
-				<div className="  md:basis-1/2 w-full px-4">
+				<div className=" relative  md:basis-1/2 w-full bg-[#1d3052] border-inherit p-4  rounded-md">
 					<ContactFrom />
+					<BorderBeam size={150} duration={20} delay={15} />
 				</div>
 			</div>
 		</div>
