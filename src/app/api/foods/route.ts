@@ -9,26 +9,18 @@ type FoodItem = {
 };
 
 const foodItems: FoodItem[] = [
-    { name: "Pizza", category: "Fast Food", price: 8.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" },
-    { name: "Burger", category: "Fast Food", price: 6.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1550547660-d9450f859349" },
-    { name: "Pasta", category: "Italian", price: 7.99, isVegetarian: true, image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246" },
-    { name: "Salad", category: "Healthy", price: 5.99, isVegetarian: true, image: "https://images.unsplash.com/photo-1559563363-e23108c5d76a" },
-    { name: "Sushi", category: "Japanese", price: 10.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0" },
-    { name: "Tacos", category: "Mexican", price: 6.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1606851091504-75b6a2a260d4" },
-    { name: "Sandwich", category: "Fast Food", price: 4.99, isVegetarian: true, image: "https://images.unsplash.com/photo-1512058564366-c9e909ca9a94" },
-    { name: "Soup", category: "Healthy", price: 4.49, isVegetarian: true, image: "https://images.unsplash.com/photo-1604908177422-df4db92c6550" },
-    { name: "Ice Cream", category: "Dessert", price: 3.99, isVegetarian: true, image: "https://images.unsplash.com/photo-1580467681057-7c0b5f46bc04" },
-    { name: "Steak", category: "Main Course", price: 12.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1569058246220-60d4e0c04d1b" },
-    { name: "Fried Rice", category: "Asian", price: 5.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1512058564366-c9e909ca9a94" },
-    { name: "Noodles", category: "Asian", price: 6.49, isVegetarian: true, image: "https://images.unsplash.com/photo-1560807707-8cc77767d783" },
-    { name: "Paneer Tikka", category: "Indian", price: 7.99, isVegetarian: true, image: "https://images.unsplash.com/photo-1603091412376-1b9f6ef99252" },
-    { name: "Chicken Curry", category: "Indian", price: 9.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1571402792778-dc2f7ec59b63" },
-    { name: "Dumplings", category: "Chinese", price: 5.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1562059390-a761a084768e" },
-    { name: "Chow Mein", category: "Chinese", price: 6.49, isVegetarian: true, image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2" },
-    { name: "Lasagna", category: "Italian", price: 8.99, isVegetarian: true, image: "https://images.unsplash.com/photo-1585238342023-27ff83bc3b7c" },
-    { name: "Fish and Chips", category: "British", price: 7.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1553621042-f6e147245754" },
-    { name: "Currywurst", category: "German", price: 6.99, isVegetarian: false, image: "https://images.unsplash.com/photo-1541698444083-023c97d3f4b6" },
-    { name: "Falafel", category: "Middle Eastern", price: 5.49, isVegetarian: true, image: "https://images.unsplash.com/photo-1604908177433-4a8f101b7e6e" }
+    { name: "Pizza", category: "Fast Food", price: 8.99, isVegetarian: false, image: "https://cdn.pixabay.com/photo/2024/03/15/16/25/pizza-8635314_640.jpg" },
+    { name: "Burger", category: "Fast Food", price: 6.99, isVegetarian: false, image: "https://www.shutterstock.com/image-photo/burger-tomateoes-lettuce-pickles-on-600nw-2309539129.jpg" },
+    { name: "Pasta", category: "Italian", price: 7.99, isVegetarian: true, image: "https://img.freepik.com/free-photo/penne-pasta-tomato-sauce-with-chicken-tomatoes-wooden-table_2829-19739.jpg" },
+    { name: "Salad", category: "Healthy", price: 5.99, isVegetarian: true, image: "https://media.istockphoto.com/id/175197961/photo/salad-plate.jpg?s=612x612&w=0&k=20&c=9lxiIPsTBH7ytCXWuC__FvWyxkPxtkJ2evoNLrwhOVA=" },
+    { name: "Sushi", category: "Japanese", price: 10.99, isVegetarian: false, image: "https://img.freepik.com/free-photo/painting-sushi-plate-with-picture-fish-it_188544-12221.jpg" },
+    { name: "Tacos", category: "Mexican", price: 6.99, isVegetarian: false, image: "https://img.freepik.com/free-photo/mexican-tacos-with-beef-tomato-sauce-salsa_2829-14218.jpg" },
+    { name: "Sandwich", category: "Fast Food", price: 4.99, isVegetarian: true, image: "https://img.freepik.com/free-photo/grilled-sandwich-with-bacon-fried-egg-tomato-lettuce-served-wooden-cutting-board_1150-42571.jpg" },
+    { name: "Soup", category: "Healthy", price: 4.49, isVegetarian: true, image: "https://t3.ftcdn.net/jpg/06/07/83/76/360_F_607837697_RaFl9VbfPVgQReI63ZoKsZNQCqKu0lI4.jpg" },
+    { name: "Ice Cream", category: "Dessert", price: 3.99, isVegetarian: true, image: "https://media.istockphoto.com/id/685816670/photo/variety-of-ice-cream-cones.jpg?s=612x612&w=0&k=20&c=I2BkvccjpB6nkLnWxY6AGh0RAonuPMwHk-rsBhK18IQ=" },
+    { name: "Steak", category: "Main Course", price: 12.99, isVegetarian: false, image: "https://img.freepik.com/free-photo/juicy-steak-medium-rare-beef-with-spices-grilled-vegetables_24972-2328.jpg" },
+    { name: "Fried Rice", category: "Asian", price: 5.99, isVegetarian: false, image: "https://images.getrecipekit.com/20220904015448-veg-20fried-20rice.png?aspect_ratio=16:9&quality=90&" },
+    { name: "Noodles", category: "Asian", price: 6.49, isVegetarian: true, image: "https://static.vecteezy.com/system/resources/previews/023/580/730/non_2x/chow-mein-fried-noodles-with-chicken-and-vegetables-generative-ai-photo.jpg" }
 ];
 
 
