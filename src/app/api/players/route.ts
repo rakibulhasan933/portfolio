@@ -62,7 +62,7 @@ const players = [
         "age": 32,
         "club": "Bayern Munich",
         "nationality": "English",
-        "photo": "https://fcbayern.com/en/teams/first-team/harry-kane"
+        "photo": "https://assets.goal.com/images/v3/bltc4b494b731e18f29/Harry_Kane_England_celebrate_record_goal_Italy.jpg?auto=webp&format=pjpg&width=3840&quality=60"
     },
 
     {
