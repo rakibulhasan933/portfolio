@@ -40,12 +40,21 @@ const project: ProjectIProps[] = [
 	},
 	{
 		id: "arafat2",
-		name: "Doctors Portal.",
-		photoUrl: "https://i.ibb.co/DbHR9Dk/Screenshot-2024-07-15-183910.png",
-		description: "Doctors Walker is an online portal providing access to various healthcare services. It offers a platform for booking appointments, managing health records, and consulting with doctors. The site aims to streamline the healthcare process for patients and practitioners alike.",
-		package: ["Javascript", "React.js", "Node.js", "Mongodb", "Firebase"],
-		gitHub: "https://github.com/rakibulhasan933/doctors-portals-client",
-		live: "https://doctors-walker.web.app/"
+		name: "HealthZenix.",
+		photoUrl: "https://i.ibb.co/wNx66SXJ/Screenshot-129.png",
+		description: "An AI-powered healthcare platform designed to analyze symptoms, provide accurate disease predictions, and generate smart prescription suggestions, enhancing medical decision-makingthrough intelligent automation.",
+		package: ["Typescript", "Next.js", "Redux", "Mongodb", "Shadcn UI"],
+		gitHub: "",
+		live: "https://healthzenix.vercel.app"
+	},
+	{
+		id: "arafat3",
+		name: "Hunger Station.",
+		photoUrl: "https://i.ibb.co/5WcJmtjX/Screenshot-130.png",
+		description: "A food delivery web app showcasing a dynamic and mobile-friendly UI. Users can explore food items by category, add them to a cart, and simulate placing an order.",
+		package: ["Typescript", "Next.js", "Node.js", "Mongodb", "Redux"],
+		gitHub: "",
+		live: "https://hungerstation.vercel.app"
 	},
 
 ];
