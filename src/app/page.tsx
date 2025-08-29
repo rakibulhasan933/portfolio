@@ -555,7 +555,7 @@ const EnhancedPortfolio = () => {
               { icon: Mail, href: 'mailto:rakibulmd933@gmail.com' },
               { icon: Linkedin, href: 'https://linkedin.com/in/rakibulhossainrakib' },
               { icon: Twitter, href: 'https://twitter.com/rakibul_hasan80' },
-              { icon: Github, href: 'https://github.com/yourusername' }
+              { icon: Github, href: 'https://github.com/rakibulhasan933' }
             ].map(({ icon: Icon, href }) => (
               <motion.a
                 key={href}
