@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Anek_Devanagari } from "next/font/google";
+import { Anek_Devanagari, Ubuntu } from "next/font/google";
 import "./globals.css";
 import type { Viewport } from 'next'
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
+
 // Optimize font loading with display: swap and preload
-const inter = Anek_Devanagari({
+const inter = Ubuntu({
   subsets: ["latin"],
   display: 'swap',
   preload: true,
-  variable: '--font-anek'
+  weight: ['300', '400', '500', '700'],
 });
 
 export const viewport: Viewport = {
@@ -100,9 +103,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.className}>
       <head>
         {/* Preload critical fonts for better performance */}
+
         <link
           rel="preload"
           href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap"
@@ -130,6 +134,8 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} bg-color-main antialiased`}>
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
