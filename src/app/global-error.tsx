@@ -1,6 +1,5 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
 
 export default function GlobalError({
 	error,
@@ -19,12 +18,12 @@ export default function GlobalError({
 							We apologize for the inconvenience.
 						</p>
 					</div>
-					<Button
+					<button
 						className="inline-flex w-fit h-10 items-center justify-center rounded-md border border-gray-200 bg-color-main text-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-color-sub"
 						onClick={() => reset()}
 					>
 						Refresh
-					</Button>
+					</button>
 				</div>
 			</body>
 		</html>
