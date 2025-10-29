@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Mail, Linkedin, Twitter, ChevronRight, Code, Palette, Briefcase, Star, ArrowUp, Menu, X, icons } from 'lucide-react';
+import { Github, ExternalLink, Mail, Linkedin, Twitter, ChevronRight, ArrowUp, Menu, X, } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const EnhancedPortfolio = () => {
-  const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -147,7 +147,7 @@ const EnhancedPortfolio = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Hire Me
+            <Link href={'https://www.linkedin.com/in/rakibulhossainrakib'} >Hire Me</Link>
           </motion.button>
         </div>
 
@@ -235,7 +235,9 @@ const EnhancedPortfolio = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Check out my work!
+              <Link href={'https://www.linkedin.com/in/rakibulhossainrakib'} >
+                Check out my work!
+              </Link>
             </motion.button>
           </motion.div>
         </motion.div>
