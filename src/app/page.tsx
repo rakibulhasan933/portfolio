@@ -409,15 +409,23 @@ const EnhancedPortfolio = () => {
         title: 'Arafat Foundation LTD',
         description: 'A comprehensive non-profit organization website dedicated to humanitarian services with modern design and seamless user experience.',
         image: '/project-1.png',
-        tech: ['TypeScript', 'Next.js', 'MongoDB', 'Prisma'],
+        tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Drizzle ORM'],
         github: '#',
         live: 'https://arafatfoundation.org'
+      },
+      {
+        title: 'Atelier Store',
+        description: 'Atelier Store — a sleek e-commerce platform designed for curated, high-quality products. I built a smooth shopping experience focusing on elegant design, fast performance, and seamless navigation.',
+        image: 'https://i.ibb.co.com/rfKw44pk/Screenshot-187.png',
+        tech: ['TypeScript', 'Next.js', 'Stripe', 'Tailwind CSS', "Framer Motion", "Drizzle ORM"],
+        github: '#',
+        live: 'https://atelier-store.vercel.app'
       },
       {
         title: 'HealthZenix',
         description: 'AI-powered healthcare platform for symptom analysis and prescription suggestions with intelligent automation.',
         image: 'https://i.ibb.co/wNx66SXJ/Screenshot-129.png',
-        tech: ['TypeScript', 'Next.js', 'Redux', 'AI/ML'],
+        tech: ['TypeScript', 'Next.js', 'Redux', 'MongoDB', 'OpenAI API'],
         github: '#',
         live: 'https://healthzenix.vercel.app'
       },
@@ -425,7 +433,7 @@ const EnhancedPortfolio = () => {
         title: 'Hunger Station',
         description: 'Modern food delivery web app with dynamic UI, mobile-friendly design and smooth user interactions.',
         image: 'https://i.ibb.co/5WcJmtjX/Screenshot-130.png',
-        tech: ['TypeScript', 'Next.js', 'Redux', 'MongoDB'],
+        tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Drizzle ORM'],
         github: '#',
         live: 'https://hungerstation.vercel.app'
       }
