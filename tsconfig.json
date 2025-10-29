@@ -19,7 +19,9 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "types": [],
+    "types": [
+      "three"
+    ],
     "plugins": [
       {
         "name": "next"
