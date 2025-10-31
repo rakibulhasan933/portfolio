@@ -388,6 +388,7 @@ const EnhancedPortfolio = () => {
                     alt={skill.name}
                     width={100}
                     height={100}
+                    loading="lazy"
                   />
                 </span>
               </div>
@@ -408,17 +409,25 @@ const EnhancedPortfolio = () => {
       {
         title: 'Arafat Foundation LTD',
         description: 'A comprehensive non-profit organization website dedicated to humanitarian services with modern design and seamless user experience.',
-        image: '/project-1.png',
+        image: 'https://i.ibb.co.com/MxcwfcKn/project-1.png',
         tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Drizzle ORM'],
         github: '#',
         live: 'https://arafatfoundation.org'
+      },
+      {
+        title: 'AI MCQ Generator & Test Platform',
+        description: 'An AI-powered multiple-choice question platform designed for Bangladesh job preparation exams. Generates high-quality, contextually accurate MCQs with well-reasoned explanations and balanced answer options. Provides in-depth performance analytics and per-question insights, supported by API rate limiting for reliable and secure operation.',
+        image: 'https://i.ibb.co.com/Ngxd4YL9/Screenshot-189.png',
+        tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Drizzle ORM'],
+        github: 'https://github.com/rakibulhasanusa/super-power-v1',
+        live: 'https://jobpreai.vercel.app'
       },
       {
         title: 'Atelier Store',
         description: 'Atelier Store — a sleek e-commerce platform designed for curated, high-quality products. I built a smooth shopping experience focusing on elegant design, fast performance, and seamless navigation.',
         image: 'https://i.ibb.co.com/rfKw44pk/Screenshot-187.png',
         tech: ['TypeScript', 'Next.js', 'Stripe', 'Tailwind CSS', "Framer Motion", "Drizzle ORM"],
-        github: '#',
+        github: 'https://github.com/rakibulhasan933/ecomarce-demo',
         live: 'https://atelier-store.vercel.app'
       },
       {
@@ -426,7 +435,7 @@ const EnhancedPortfolio = () => {
         description: 'AI-powered healthcare platform for symptom analysis and prescription suggestions with intelligent automation.',
         image: 'https://i.ibb.co/wNx66SXJ/Screenshot-129.png',
         tech: ['TypeScript', 'Next.js', 'Redux', 'MongoDB', 'OpenAI API'],
-        github: '#',
+        github: 'https://github.com/rakibulhasan933/healthzenix',
         live: 'https://healthzenix.vercel.app'
       },
       {
@@ -434,7 +443,7 @@ const EnhancedPortfolio = () => {
         description: 'Modern food delivery web app with dynamic UI, mobile-friendly design and smooth user interactions.',
         image: 'https://i.ibb.co/5WcJmtjX/Screenshot-130.png',
         tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Drizzle ORM'],
-        github: '#',
+        github: 'https://github.com/rakibulhasan933/hungerstation-clone',
         live: 'https://hungerstation.vercel.app'
       }
     ];
