@@ -409,7 +409,7 @@ const EnhancedPortfolio = () => {
       {
         title: 'Arafat Foundation LTD',
         description: 'A comprehensive non-profit organization website dedicated to humanitarian services with modern design and seamless user experience.',
-        image: '/project-1.png',
+        image: 'https://i.ibb.co.com/MxcwfcKn/project-1.png',
         tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Drizzle ORM'],
         github: '#',
         live: 'https://arafatfoundation.org'
