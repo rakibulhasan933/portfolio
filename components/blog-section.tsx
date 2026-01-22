@@ -20,9 +20,9 @@ function formatDate(dateString: string) {
 
 export function BlogSection() {
   return (
-    <section id="blog" className="py-24 bg-card/50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
-      <div className="container mx-auto px-6 relative">
+    <section id="blog" className="md:py-24 py-4 bg-card/50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-b from-primary/5 to-transparent pointer-events-none" />
+      <div className="container mx-auto md:px-6 px-4 relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl opacity-0 animate-fade-in-up" style={{ animationDelay: "0s" }}>
             <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4">
@@ -32,7 +32,7 @@ export function BlogSection() {
               Thoughts on web development
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I write about JavaScript, TypeScript, React, and modern web development 
+              I write about JavaScript, TypeScript, React, and modern web development
               practices. Sharing insights from building real-world applications.
             </p>
           </div>
@@ -45,7 +45,7 @@ export function BlogSection() {
         </div>
 
         {/* Featured Post */}
-        <div className="mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <div className="md:mb-12 mb-3 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           <article className="group grid md:grid-cols-2 gap-8 bg-background/50 backdrop-blur-sm border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10">
             <div className="relative aspect-video md:aspect-auto bg-secondary overflow-hidden">
               <Image
@@ -54,7 +54,7 @@ export function BlogSection() {
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
             <div className="p-6 md:p-8 flex flex-col justify-center space-y-4">
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -71,7 +71,7 @@ export function BlogSection() {
               <p className="text-muted-foreground leading-relaxed">
                 {blogPosts[0].excerpt}
               </p>
-              <Link 
+              <Link
                 href={`/blog/${blogPosts[0].slug}`}
                 className="inline-flex items-center text-primary font-medium hover:underline group/link"
               >
@@ -83,7 +83,7 @@ export function BlogSection() {
         </div>
 
         {/* Other Posts */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 md:gap-6 gap-3">
           {blogPosts.slice(1).map((post, idx) => (
             <article
               key={post.slug}
@@ -97,7 +97,7 @@ export function BlogSection() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <div className="p-6 space-y-3">
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
@@ -110,7 +110,7 @@ export function BlogSection() {
                 <p className="text-muted-foreground text-sm leading-relaxed line-clamp-2">
                   {post.excerpt}
                 </p>
-                <Link 
+                <Link
                   href={`/blog/${post.slug}`}
                   className="inline-flex items-center text-sm text-primary font-medium hover:underline group/link"
                 >
