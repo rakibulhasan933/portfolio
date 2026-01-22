@@ -118,6 +118,7 @@ export default function AIChatbot() {
         className="fixed bottom-6 right-6 z-40 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-600/50 transition-all duration-300 hover:scale-110 group"
         aria-label="Open chat"
       >
+        Chat AI
         <MessageCircle className="h-6 w-6 group-hover:rotate-12 transition-transform" />
         {messages.length > 0 && (
           <span className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded-full animate-pulse" />
@@ -125,17 +126,16 @@ export default function AIChatbot() {
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[600px]">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-6 flex items-center justify-between">
+        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-600px">
+          <div className="bg-linear-to-r from-blue-600 to-blue-500 text-white p-6 flex items-center justify-between">
             <div>
               <h3 className="font-semibold text-lg flex items-center gap-2">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
                 </span>
-                Business Assistant
+                Assistant
               </h3>
-              <p className="text-sm text-white/80">Powered by Gemini AI - Website Content Aware</p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -157,12 +157,6 @@ export default function AIChatbot() {
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                     I am an AI assistant trained on Rakibuls complete portfolio and business information. Ask me anything!
                   </p>
-                  <div className="space-y-2 text-xs text-gray-500 dark:text-gray-500">
-                    <p>• About services and expertise</p>
-                    <p>• Development process and capabilities</p>
-                    <p>• Skills and technologies</p>
-                    <p>• Contact and availability</p>
-                  </div>
                 </div>
               </div>
             ) : (

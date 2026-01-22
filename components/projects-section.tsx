@@ -9,6 +9,16 @@ const categories = ["All", "Web Apps", "E-Commerce", "SaaS", "Open Source"]
 
 const projects = [
   {
+    title: "Mumo Travels & Tours",
+    description: "A modern travel booking platform with AI-powered recommendations, real-time availability, and seamless payment integration.",
+    image: "https://i.ibb.co.com/8L272W4w/Screenshot-248.png",
+    category: "Web Apps",
+    technologies: ["Next.js", "TypeScript", "GraphQL", "Stripe"],
+    liveUrl: "https://mumotravels.com",
+    githubUrl: "",
+    featured: true,
+  },
+  {
     title: "TaskFlow Pro",
     description: "A comprehensive project management platform with real-time collaboration, kanban boards, and team analytics.",
     image: "/projects/taskflow.jpg",
@@ -73,8 +83,8 @@ const projects = [
 export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState("All")
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
+  const filteredProjects = activeCategory === "All"
+    ? projects
     : projects.filter(p => p.category === activeCategory)
 
   return (
@@ -89,8 +99,8 @@ export function ProjectsSection() {
             Projects I&apos;ve built
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            A collection of projects that showcase my skills in building modern, 
-            scalable web applications. Each project represents unique challenges 
+            A collection of projects that showcase my skills in building modern,
+            scalable web applications. Each project represents unique challenges
             and creative solutions.
           </p>
         </div>
@@ -102,11 +112,10 @@ export function ProjectsSection() {
               key={category}
               type="button"
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/50"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:border-primary/50"
-              }`}
+              className={`px-4 py-2 text-sm rounded-lg transition-all duration-300 ${activeCategory === category
+                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/50"
+                : "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:border-primary/50"
+                }`}
             >
               {category}
             </button>
@@ -135,7 +144,7 @@ export function ProjectsSection() {
                   </span>
                 )}
               </div>
-              
+
               <div className="p-6 space-y-4">
                 <div>
                   <span className="text-xs text-primary font-mono uppercase tracking-wider">
@@ -145,11 +154,11 @@ export function ProjectsSection() {
                     {project.title}
                   </h3>
                 </div>
-                
+
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-1.5">
                   {project.technologies.map((tech) => (
                     <span
@@ -160,7 +169,7 @@ export function ProjectsSection() {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-3 pt-2 opacity-90 group-hover:opacity-100 transition-opacity">
                   <Button variant="outline" size="sm" asChild className="hover:border-primary transition-colors bg-transparent">
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">

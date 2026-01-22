@@ -2,10 +2,10 @@ import Link from "next/link"
 import { Github, Linkedin, Twitter, Mail } from "lucide-react"
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/rakibul", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/rakibul", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/rakibul", label: "Twitter" },
-  { icon: Mail, href: "mailto:hello@rakibul.dev", label: "Email" },
+  { icon: Github, href: "https://github.com/rakibulhasan933", label: "GitHub" },
+  { icon: Linkedin, href: "https:/https://www.linkedin.com/in/rakibulhossainrakib", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/rakibul_hasan80", label: "Twitter" },
+  { icon: Mail, href: "mailto:rakibulmd933@gmail.com", label: "Email" },
 ]
 
 const navLinks = [
@@ -48,7 +48,7 @@ export function Footer() {
           {/* Social Links */}
           <div className="flex justify-end gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             {socialLinks.map((social, idx) => (
-              <a
+              <Link
                 key={social.label}
                 href={social.href}
                 target="_blank"
@@ -58,7 +58,7 @@ export function Footer() {
                 style={{ animationDelay: `${0.2 + idx * 0.05}s` }}
               >
                 <social.icon className="h-5 w-5" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

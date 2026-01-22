@@ -15,25 +15,11 @@ export const websiteContent = {
     maintenance: 'Bug fixes, feature updates, performance monitoring, 24/7 support',
   },
   skills: {
-    languages: ['JavaScript', 'TypeScript', 'Python', 'SQL'],
+    languages: ['JavaScript', 'TypeScript', 'SQL'],
     frontend: ['React', 'Next.js', 'Tailwind CSS', 'Shadcn/UI', 'GSAP'],
     backend: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'REST API'],
     tools: ['Git', 'Docker', 'AWS', 'Vercel', 'VS Code'],
   },
-  experience: [
-    {
-      role: 'Senior Frontend Developer',
-      company: 'Tech Company',
-      period: '2022 - Present',
-      description: 'Leading frontend development, building reusable components, mentoring junior developers',
-    },
-    {
-      role: 'Full-Stack Developer',
-      company: 'Startup',
-      period: '2020 - 2022',
-      description: 'Developed full-stack applications, managed databases, deployed to production',
-    },
-  ],
   services_offered: [
     'Custom Web Application Development',
     'SPA (Single Page Application) Development',
@@ -77,7 +63,7 @@ export const websiteContent = {
     },
   ],
   contact: {
-    email: 'hello@rakibul.dev',
+    email: 'rakibulmd933@gmail.com',
     location: 'Dhaka, Bangladesh (Remote Available)',
     responseTime: 'Within 24 hours',
   },
@@ -86,11 +72,6 @@ export const websiteContent = {
 export function getRelevantContext(query: string): string {
   const queryLower = query.toLowerCase()
   let context = ''
-
-  // Match queries to relevant content
-  if (queryLower.includes('experience') || queryLower.includes('background')) {
-    context += `Experience: ${websiteContent.experience.map((e) => `${e.role} at ${e.company} (${e.period})`).join('; ')}\n`
-  }
 
   if (queryLower.includes('skill') || queryLower.includes('technology') || queryLower.includes('language')) {
     context += `Skills: Frontend (${websiteContent.skills.frontend.join(', ')}), Backend (${websiteContent.skills.backend.join(', ')}), Languages (${websiteContent.skills.languages.join(', ')})\n`

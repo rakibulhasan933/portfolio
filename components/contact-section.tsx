@@ -22,21 +22,21 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000))
-    
+
     setIsSubmitting(false)
     setSubmitted(true)
     setFormState({ name: "", email: "", subject: "", message: "" })
-    
+
     // Reset success message after 5 seconds
     setTimeout(() => setSubmitted(false), 5000)
   }
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-primary/5 to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 relative">
         <div className="max-w-3xl mx-auto text-center mb-16 opacity-0 animate-fade-in-up" style={{ animationDelay: "0s" }}>
           <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4">
@@ -46,8 +46,8 @@ export function ContactSection() {
             Let&apos;s work together
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Have a project in mind? I&apos;d love to hear about it. Whether you need 
-            a full-stack application, want to improve an existing product, or just 
+            Have a project in mind? I&apos;d love to hear about it. Whether you need
+            a full-stack application, want to improve an existing product, or just
             want to say hi, feel free to reach out.
           </p>
         </div>
@@ -62,15 +62,15 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                  <a 
-                    href="mailto:hello@rakibul.dev" 
+                  <a
+                    href="mailto:rakibulmd933@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors duration-300"
                   >
-                    hello@rakibul.dev
+                    rakibulmd933@gmail.com
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4 group p-4 rounded-lg hover:bg-primary/5 transition-all duration-300">
                 <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <MapPin className="h-5 w-5 text-primary" />
@@ -89,7 +89,7 @@ export function ContactSection() {
                 Availability
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                I&apos;m currently available for freelance projects and full-time 
+                I&apos;m currently available for freelance projects and full-time
                 opportunities. My typical response time is within 24 hours.
               </p>
               <div className="flex items-center gap-2">
@@ -128,7 +128,7 @@ export function ContactSection() {
                 />
               </div>
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="subject">Subject</Label>
               <Input
@@ -140,7 +140,7 @@ export function ContactSection() {
                 className="focus:ring-2 focus:ring-primary/50 transition-all duration-300"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="message">Message</Label>
               <Textarea
