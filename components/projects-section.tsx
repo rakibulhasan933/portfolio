@@ -88,8 +88,8 @@ export function ProjectsSection() {
     : projects.filter(p => p.category === activeCategory)
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
+    <section id="projects" className="md:py-24 py-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-t from-primary/5 to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 relative">
         <div className="max-w-3xl mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0s" }}>
           <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4">
@@ -106,7 +106,7 @@ export function ProjectsSection() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-2 mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+        <div className="flex flex-wrap gap-2 md:mb-12 mb-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           {categories.map((category) => (
             <button
               key={category}
@@ -123,7 +123,7 @@ export function ProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 gap-3">
           {filteredProjects.map((project, idx) => (
             <article
               key={project.title}
@@ -137,7 +137,7 @@ export function ProjectsSection() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 {project.featured && (
                   <span className="absolute top-3 left-3 px-3 py-1.5 text-xs font-semibold bg-primary text-primary-foreground rounded-full shadow-lg animate-pulse">
                     Featured
@@ -145,7 +145,7 @@ export function ProjectsSection() {
                 )}
               </div>
 
-              <div className="p-6 space-y-4">
+              <div className="md:p-6 p-2 space-y-4">
                 <div>
                   <span className="text-xs text-primary font-mono uppercase tracking-wider">
                     {project.category}
