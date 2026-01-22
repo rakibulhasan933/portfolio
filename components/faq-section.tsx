@@ -19,7 +19,7 @@ export function FAQSection() {
       : faqs.filter((faq) => faq.category === activeCategory);
 
   return (
-    <section id="faq" className="py-24 relative overflow-hidden">
+    <section id="faq" className="md:py-24 py-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-b from-primary/5 to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 relative">
         {/* Header */}
@@ -37,7 +37,7 @@ export function FAQSection() {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-2 mb-12 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <div className="flex flex-wrap gap-2 md:mb-12 mb-3 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           <Button
             variant={activeCategory === 'All' ? 'default' : 'outline'}
             onClick={() => setActiveCategory('All')}
@@ -65,10 +65,10 @@ export function FAQSection() {
                 <AccordionItem
                   key={faq.id}
                   value={faq.id}
-                  className="border border-border rounded-lg px-6 hover:border-primary/50 transition-all duration-300 group"
+                  className="border border-border rounded-lg md:px-6 px-0.5 hover:border-primary/50 transition-all duration-300 group"
                 >
-                  <AccordionTrigger className="py-4 hover:text-primary transition-colors duration-300 [&[data-state=open]>svg]:rotate-180">
-                    <div className="flex items-center gap-3 text-left">
+                  <AccordionTrigger className="md:py-4 py-1 hover:text-primary transition-colors duration-300 flex items-center [&[data-state=open]>svg]:rotate-180">
+                    <div className="flex items-center md:gap-3 gap-1 text-left">
                       <span className="text-xs text-primary font-mono uppercase tracking-wider font-medium">
                         {faq.category}
                       </span>
@@ -77,14 +77,14 @@ export function FAQSection() {
                       </h3>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                  <AccordionContent className="text-muted-foreground leading-relaxed md:pb-4 pb-2">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           ) : (
-            <div className="text-center py-12">
+            <div className="text-center md:py-12 py-4">
               <p className="text-muted-foreground">No FAQs found for this category.</p>
             </div>
           )}
