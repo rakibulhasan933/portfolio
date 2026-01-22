@@ -18,7 +18,7 @@ const navLinks = [
 export function Footer() {
   return (
     <footer className="bg-card/50 backdrop-blur-sm border-t border-border/50 hover:border-border/75 transition-colors duration-300">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto md:px-6 px-3 md:py-12 py-6">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Brand */}
           <div className="space-y-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0s" }}>
@@ -46,7 +46,7 @@ export function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-end gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex md:justify-end justify-center gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             {socialLinks.map((social, idx) => (
               <Link
                 key={social.label}
@@ -63,7 +63,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-border/50 md:mt-8 mt-4 md:pt-8 pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground opacity-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             © {new Date().getFullYear()} Rakibul Hasan. All rights reserved.
           </p>

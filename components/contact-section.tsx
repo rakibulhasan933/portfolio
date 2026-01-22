@@ -35,7 +35,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="md:py-24 py-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-t from-primary/5 to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 relative">
         <div className="max-w-3xl mx-auto text-center mb-16 opacity-0 animate-fade-in-up" style={{ animationDelay: "0s" }}>
@@ -52,11 +52,11 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 md:gap-12 gap-4 max-w-5xl mx-auto">
           {/* Contact Info */}
-          <div className="space-y-8 opacity-0 animate-slide-in-left" style={{ animationDelay: "0.2s" }}>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 group p-4 rounded-lg hover:bg-primary/5 transition-all duration-300">
+          <div className="md:space-y-8 space-y-4 opacity-0 animate-slide-in-left" style={{ animationDelay: "0.2s" }}>
+            <div className="md:space-y-6 space-y-3">
+              <div className="flex items-start gap-4 group md:p-4 p-2 rounded-lg hover:bg-primary/5 transition-all duration-300">
                 <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
@@ -71,7 +71,7 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 group p-4 rounded-lg hover:bg-primary/5 transition-all duration-300">
+              <div className="flex items-start gap-4 group md:p-4 p-2 rounded-lg hover:bg-primary/5 transition-all duration-300">
                 <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
@@ -102,7 +102,7 @@ export function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6 opacity-0 animate-slide-in-right" style={{ animationDelay: "0.2s" }}>
+          <form onSubmit={handleSubmit} className="md:space-y-6 space-y-3 opacity-0 animate-slide-in-right" style={{ animationDelay: "0.2s" }}>
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
