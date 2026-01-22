@@ -57,7 +57,7 @@ export function CompleteSolutionsSection() {
     if (!containerRef.current) return
 
     const cards = cardsRef.current.filter(Boolean)
-    
+
     gsap.fromTo(
       cards,
       {
@@ -77,9 +77,9 @@ export function CompleteSolutionsSection() {
   }, [])
 
   return (
-    <section id="solutions" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none" />
-      
+    <section id="solutions" className="md:py-24 py-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none" />
+
       <div className="container mx-auto px-6 relative">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4 opacity-0 animate-fade-in-up">
@@ -89,14 +89,14 @@ export function CompleteSolutionsSection() {
             A-Z Business Ready Solutions
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            From initial concept to production deployment and beyond, I provide comprehensive, 
-            business-ready solutions that cover every aspect of your digital product development. 
+            From initial concept to production deployment and beyond, I provide comprehensive,
+            business-ready solutions that cover every aspect of your digital product development.
             Full-stack expertise ensures seamless integration and optimal performance.
           </p>
         </div>
 
         {/* Solution Phases Grid */}
-        <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:mb-16 mb-8">
           {solutionPhases.map((solution, index) => (
             <div
               key={solution.phase}
