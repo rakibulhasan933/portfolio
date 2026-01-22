@@ -41,7 +41,7 @@ export function Navigation() {
               </Link>
             ))}
             <Button asChild size="sm" className="opacity-0 animate-fade-in-down hover:shadow-lg hover:shadow-primary/50 transition-all duration-300" style={{ animationDelay: "0.3s" }}>
-              <a href="mailto:hello@rakibul.dev">Get in Touch</a>
+              <Link href="/rakibulhasanresume.pdf">Resume</Link>
             </Button>
           </div>
 
@@ -75,7 +75,7 @@ export function Navigation() {
                 </Link>
               ))}
               <Button asChild size="sm" className="w-fit hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
-                <a href="mailto:hello@rakibul.dev">Get in Touch</a>
+                <Link href="/rakibulhasanresume.pdf">Resume</Link>
               </Button>
             </div>
           </div>
