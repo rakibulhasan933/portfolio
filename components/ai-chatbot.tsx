@@ -115,21 +115,23 @@ export default function AIChatbot() {
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-40 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-600/50 transition-all duration-300 hover:scale-110 group"
+        className="fixed bottom-6 right-6 z-40 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full shadow-xl hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-110 group flex items-center justify-center"
         aria-label="Open chat"
       >
-        Chat AI
-        <MessageCircle className="h-6 w-6 group-hover:rotate-12 transition-transform" />
+        <div className="flex flex-col items-center justify-center gap-1">
+          <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
+          <span className="text-xs font-semibold leading-none">Chat AI</span>
+        </div>
         {messages.length > 0 && (
-          <span className="absolute top-2 right-2 w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+          <span className="absolute top-0 right-0 w-4 h-4 bg-green-400 rounded-full animate-pulse border-2 border-white" />
         )}
       </button>
 
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-600px">
-          <div className="bg-linear-to-r from-blue-600 to-blue-500 text-white p-6 flex items-center justify-between">
+        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-600px animate-scale-in">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-6 flex items-center justify-between">
             <div>
-              <h3 className="font-semibold text-lg flex items-center gap-2">
+              <h3 className="font-semibold text-lg flex items-center gap-3">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
@@ -139,22 +141,22 @@ export default function AIChatbot() {
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+              className="p-2 hover:bg-white/20 rounded-lg transition-all duration-200 active:scale-95"
               aria-label="Close chat"
             >
               <X className="h-5 w-5" />
             </button>
           </div>
 
-          <div className="flex-1 p-6 space-y-4 overflow-y-auto">
+          <div className="flex-1 p-6 space-y-4 overflow-y-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
             {messages.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full text-center space-y-4">
-                <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-full">
-                  <MessageCircle className="h-8 w-8 text-blue-600 dark:text-blue-400 animate-pulse" />
+                <div className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-full">
+                  <MessageCircle className="h-10 w-10 text-blue-600 dark:text-blue-400 animate-pulse" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Welcome!</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <h4 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">Welcome!</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                     I am an AI assistant trained on Rakibuls complete portfolio and business information. Ask me anything!
                   </p>
                 </div>
@@ -164,24 +166,24 @@ export default function AIChatbot() {
                 {messages.map((message) => (
                   <div
                     key={message.id}
-                    className={`flex gap-3 mb-4 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                    className={`flex gap-3 mb-4 ${message.role === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in-up`}
                   >
                     <div
-                      className={`max-w-xs px-4 py-3 rounded-lg ${message.role === 'user'
-                        ? 'bg-blue-600 text-white rounded-br-none'
+                      className={`max-w-xs px-4 py-3 rounded-2xl ${message.role === 'user'
+                        ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-br-none shadow-md'
                         : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-bl-none'
                         }`}
                     >
-                      <div className="text-sm whitespace-pre-wrap">
+                      <div className="text-sm whitespace-pre-wrap leading-relaxed">
                         {message.content}
                       </div>
                     </div>
                   </div>
                 ))}
                 {isLoading && (
-                  <div className="flex gap-3">
-                    <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg rounded-bl-none px-4 py-3">
-                      <div className="flex gap-1">
+                  <div className="flex gap-3 animate-fade-in-up">
+                    <div className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl rounded-bl-none px-4 py-3">
+                      <div className="flex gap-1.5">
                         <div className="w-2 h-2 bg-current rounded-full animate-bounce" />
                         <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
                         <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
@@ -194,7 +196,7 @@ export default function AIChatbot() {
             )}
           </div>
 
-          <div className="p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+          <div className="p-4 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -203,12 +205,12 @@ export default function AIChatbot() {
                 onKeyPress={handleKeyPress}
                 placeholder="Ask a question..."
                 disabled={isLoading}
-                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-white disabled:opacity-50"
+                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white disabled:opacity-50 transition-all duration-200"
               />
               <button
                 onClick={handleSubmit}
                 disabled={!input.trim() || isLoading}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/50"
+                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl hover:from-blue-700 hover:to-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/50 active:scale-95"
               >
                 <Send className="h-4 w-4" />
               </button>

@@ -48,6 +48,8 @@ export default function RootLayout({
   return (
     <html lang="en"
       className="hydrated"
+      data-arp=""
+      data-qb-installed="true"
     >
       <body className={`font-sans antialiased`}
 
