@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 const _inter = Inter({ subsets: ["latin"] });
 const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
@@ -34,7 +36,8 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
-  generator: 'v0.app'
+  generator: 'rakibul.dev',
+  applicationName: 'Rakibul Hasan Portfolio',
 }
 
 export default function RootLayout({
@@ -49,8 +52,10 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}
 
       >
+        <Navigation />
         {children}
         <Analytics />
+        <Footer />
       </body>
     </html>
   )

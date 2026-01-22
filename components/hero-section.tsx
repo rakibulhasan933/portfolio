@@ -50,7 +50,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center md:pt-20 pt-3 md:pb-16 pb-4 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

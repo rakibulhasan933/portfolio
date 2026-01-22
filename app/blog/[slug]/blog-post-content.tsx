@@ -19,35 +19,10 @@ function formatDate(dateString: string) {
 export function BlogPostContent({ post }: { post: BlogPost }) {
   return (
     <main className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <nav className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-xl font-semibold tracking-tight text-foreground">
-              Rakibul Hasan
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                About
-              </Link>
-              <Link href="/#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Projects
-              </Link>
-              <Link href="/blog" className="text-sm text-foreground">
-                Blog
-              </Link>
-              <Link href="/#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </nav>
-      </header>
-
       <article className="container mx-auto px-6 pt-32 pb-24">
         {/* Back Link */}
-        <Link 
-          href="/blog" 
+        <Link
+          href="/blog"
           className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
@@ -151,13 +126,6 @@ export function BlogPostContent({ post }: { post: BlogPost }) {
           </div>
         </div>
       </article>
-
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-8">
-        <div className="container mx-auto px-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Rakibul Hasan. All rights reserved.
-        </div>
-      </footer>
     </main>
   )
 }

@@ -12,7 +12,6 @@ import AIChatbot from "@/components/ai-chatbot"
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
-      <Navigation />
       <HeroSection />
       <AboutSection />
       <CompleteSolutionsSection />
@@ -20,7 +19,6 @@ export default function HomePage() {
       <BlogSection />
       <FAQSection />
       <ContactSection />
-      <Footer />
       <AIChatbot />
     </main>
   )
