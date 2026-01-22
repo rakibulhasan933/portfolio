@@ -30,8 +30,8 @@ const experience = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-card/50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+    <section id="about" className="md:py-24 py-4 bg-card/50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-b from-primary/5 to-transparent pointer-events-none" />
       <div className="container mx-auto px-6 relative">
         <div className="max-w-3xl mb-16 opacity-0 animate-fade-in-up" style={{ animationDelay: "0s" }}>
           <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4">
@@ -49,7 +49,7 @@ export function AboutSection() {
         </div>
 
         {/* Skills */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-3 md:gap-8 gap-4 md:mb-20 mb-2">
           {skills.map((skillGroup, idx) => (
             <div key={skillGroup.category} className="space-y-4 opacity-0 animate-fade-in-up" style={{ animationDelay: `${0.1 + idx * 0.1}s` }}>
               <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
