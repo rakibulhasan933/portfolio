@@ -5,9 +5,20 @@ import Image from "next/image"
 import { ExternalLink, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const categories = ["All", "Web Apps", "E-Commerce", "SaaS", "Open Source"]
+const categories = ["All", "Web Apps", "E-Commerce", "SaaS"];
 
-const projects = [
+interface ProjectIProps {
+  title: string
+  description: string
+  image: string
+  category: string
+  technologies: string[]
+  liveUrl: string
+  githubUrl?: string
+  featured?: boolean
+}
+
+const projects: ProjectIProps[] = [
   {
     title: "Mumo Travels & Tours",
     description: "A modern travel booking platform with AI-powered recommendations, real-time availability, and seamless payment integration.",
@@ -19,65 +30,51 @@ const projects = [
     featured: true,
   },
   {
-    title: "TaskFlow Pro",
-    description: "A comprehensive project management platform with real-time collaboration, kanban boards, and team analytics.",
-    image: "/projects/taskflow.jpg",
-    category: "SaaS",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
-    liveUrl: "https://taskflow.example.com",
-    githubUrl: "https://github.com/rakibul/taskflow",
+    title: "Arafat Foundation",
+    description: "A concise, portfolio-ready snapshot of the Arafat Foundation website — a modern, accessible web presence for a community foundation focused on local impact.",
+    image: "https://i.ibb.co.com/MxcwfcKn/project-1.png",
+    category: "Web Apps",
+    technologies: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS"],
+    liveUrl: "https://arafatfoundation.org",
     featured: true,
   },
   {
-    title: "ShopNest",
-    description: "Modern e-commerce platform with headless CMS, Stripe integration, and personalized product recommendations.",
-    image: "/projects/shopnest.jpg",
+    title: "Atelier Store",
+    description: "It demonstrates product listing, product detail pages, a responsive header with a mobile sheet menu, and a persistent client-side shopping cart.",
+    image: "https://i.ibb.co.com/rfKw44pk/Screenshot-187.png",
     category: "E-Commerce",
     technologies: ["Next.js", "Sanity", "Stripe", "Vercel"],
-    liveUrl: "https://shopnest.example.com",
+    liveUrl: "https://atelier-store.vercel.app",
     githubUrl: "https://github.com/rakibul/shopnest",
     featured: true,
   },
   {
-    title: "DevMetrics",
-    description: "Analytics dashboard for developers to track coding patterns, productivity metrics, and learning progress.",
-    image: "/projects/devmetrics.jpg",
-    category: "Web Apps",
-    technologies: ["React", "D3.js", "Node.js", "MongoDB"],
-    liveUrl: "https://devmetrics.example.com",
-    githubUrl: "https://github.com/rakibul/devmetrics",
+    title: "AI MCQ Generator & Test Platform",
+    description: "An AI-powered multiple-choice question platform designed for Bangladesh job preparation exams.\nGenerates high-quality, contextually accurate MCQs with well-reasoned explanations and balanced\nanswer options",
+    image: "https://i.ibb.co.com/Ngxd4YL9/Screenshot-189.png",
+    category: "SaaS",
+    technologies: ["React", "OpenAI", "Node.js", "MongoDB"],
+    liveUrl: "https://jobpreai.vercel.app",
     featured: true,
   },
   {
-    title: "FormBuilder",
-    description: "Drag-and-drop form builder with conditional logic, integrations, and advanced analytics.",
-    image: "/projects/formbuilder.jpg",
+    title: "FreePlanTour",
+    description: "FreePlanTour is a travel planning web platform that helps users explore destinations and generate ready-made travel itineraries. It provides structured day-by-day plans, destination guides, and an intuitive interface to simplify trip planning for travelers.",
+    image: "https://i.ibb.co.com/9yqZTJ8/Screenshot-2024-07-15-182540.png",
     category: "SaaS",
-    technologies: ["Next.js", "React DnD", "Prisma", "PostgreSQL"],
-    liveUrl: "https://formbuilder.example.com",
-    githubUrl: "https://github.com/rakibul/formbuilder",
+    technologies: ["Next.js", "OpenAI", "Tailwind CSS", "Firebase"],
+    liveUrl: "https://www.freeplantour.com",
     featured: false,
   },
   {
-    title: "OpenAuth",
-    description: "Open-source authentication library supporting multiple providers with TypeScript-first approach.",
-    image: "/projects/openauth.jpg",
-    category: "Open Source",
-    technologies: ["TypeScript", "Node.js", "JWT", "OAuth2"],
-    liveUrl: "https://openauth.example.com",
-    githubUrl: "https://github.com/rakibul/openauth",
-    featured: false,
-  },
-  {
-    title: "FoodieSpot",
-    description: "Restaurant discovery platform with real-time reservations and social dining features.",
-    image: "/projects/foodiespot.jpg",
+    title: "FreelancerMarriage",
+    description: "FreelancerMarriage is an online matrimony platform designed to connect individuals seeking serious relationships and life partners. The site facilitates profile browsing, partner matching, and communication features to support users in finding compatible matches.",
+    image: "https://i.ibb.co.com/N299jjrG/image.png",
     category: "Web Apps",
-    technologies: ["Next.js", "GraphQL", "PostgreSQL", "Maps API"],
-    liveUrl: "https://foodiespot.example.com",
-    githubUrl: "https://github.com/rakibul/foodiespot",
+    technologies: ["TypeScript", "Node.js", "Neon", "Drizzle ORM", "Clerk"],
+    liveUrl: "https://freelancermarriage.com",
     featured: false,
-  },
+  }
 ]
 
 export function ProjectsSection() {
@@ -177,12 +174,14 @@ export function ProjectsSection() {
                       Live Demo
                     </a>
                   </Button>
-                  <Button variant="ghost" size="sm" asChild className="hover:text-primary transition-colors">
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 mr-1.5" />
-                      Code
-                    </a>
-                  </Button>
+                  {project.githubUrl && (
+                    <Button variant="ghost" size="sm" asChild className="hover:border-primary transition-colors">
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-1.5" />
+                        Code
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </div>
             </article>
