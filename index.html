@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rakibul Hasan - Full-Stack Developer. Building digital experiences with modern web technologies.">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>Rakibul Hasan - Full-Stack Developer</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    :root {
+      --background: oklch(0.13 0.01 250);
+      --foreground: oklch(0.92 0.01 250);
+      --card: oklch(0.16 0.01 250);
+      --card-foreground: oklch(0.92 0.01 250);
+      --primary: oklch(0.72 0.15 185);
+      --primary-foreground: oklch(0.13 0.01 250);
+      --secondary: oklch(0.22 0.01 250);
+      --secondary-foreground: oklch(0.92 0.01 250);
+      --muted-foreground: oklch(0.65 0.01 250);
+      --border: oklch(0.25 0.01 250);
+      --input: oklch(0.22 0.01 250);
+    }
+
+    * {
+      @apply border-[color:var(--border)];
+    }
+
+    body {
+      @apply bg-[color:var(--background)] text-[color:var(--foreground)];
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Custom Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(114, 214, 165, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(114, 214, 165, 0.6);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animate-fade-in-down {
+      animation: fadeInDown 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animate-slide-in-left {
+      animation: slideInLeft 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animate-slide-in-right {
+      animation: slideInRight 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animate-scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animate-glow {
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .text-primary {
+      color: var(--primary);
+    }
+
+    .text-muted-foreground {
+      color: var(--muted-foreground);
+    }
+
+    .bg-card {
+      background-color: rgba(22, 26, 45, 0.5);
+    }
+
+    .border-border {
+      border-color: var(--border);
+    }
+
+    .bg-secondary {
+      background-color: var(--secondary);
+    }
+
+    .text-secondary-foreground {
+      color: var(--secondary-foreground);
+    }
+
+    .bg-primary {
+      background-color: var(--primary);
+    }
+
+    .bg-primary\/5 {
+      background-color: rgba(114, 214, 165, 0.05);
+    }
+
+    .bg-primary\/10 {
+      background-color: rgba(114, 214, 165, 0.1);
+    }
+
+    .bg-primary\/20 {
+      background-color: rgba(114, 214, 165, 0.2);
+    }
+
+    .border-primary {
+      border-color: var(--primary);
+    }
+
+    .border-primary\/50 {
+      border-color: rgba(114, 214, 165, 0.5);
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Code syntax highlighting for the hero code box */
+    .code-box {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+
+    .code-box .keyword { color: #72d6a5; }
+    .code-box .string { color: #ffa07a; }
+    .code-box .property { color: #72d6a5; }
+    .code-box .comment { color: rgba(255, 255, 255, 0.4); }
+
+    /* Accordion styles */
+    .accordion-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .accordion-header {
+      padding: 16px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background-color: rgba(114, 214, 165, 0.05);
+      border-color: rgba(114, 214, 165, 0.5);
+    }
+
+    .accordion-header.active {
+      color: var(--primary);
+    }
+
+    .accordion-content {
+      padding: 0 24px 16px 24px;
+      display: none;
+      animation: fadeInUp 0.3s ease-out forwards;
+    }
+
+    .accordion-content.active {
+      display: block;
+    }
+
+    .accordion-toggle {
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-toggle.active {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[color:var(--background)]/80 backdrop-blur-md border-b border-[color:var(--border)]/50 hover:border-[color:var(--border)] transition-colors duration-300">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-xl font-semibold tracking-tight text-[color:var(--foreground)] hover:text-primary transition-colors duration-300 group">
+          <span class="group-hover:scale-105 inline-block transition-transform">
+            Rakibul Hasan
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group opacity-0 animate-fade-in-down" style="animation-delay: 0.1s;">
+            About
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+          </a>
+          <a href="#solutions" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group opacity-0 animate-fade-in-down" style="animation-delay: 0.15s;">
+            Solutions
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+          </a>
+          <a href="#projects" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group opacity-0 animate-fade-in-down" style="animation-delay: 0.2s;">
+            Projects
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+          </a>
+          <a href="#blog" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group opacity-0 animate-fade-in-down" style="animation-delay: 0.25s;">
+            Blog
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+          </a>
+          <a href="#faq" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group opacity-0 animate-fade-in-down" style="animation-delay: 0.3s;">
+            FAQ
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+          </a>
+          <a href="#contact" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group opacity-0 animate-fade-in-down" style="animation-delay: 0.35s;">
+            Contact
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+          </a>
+          <a href="rakibulhasanresume.pdf" class="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium opacity-0 animate-fade-in-down hover:shadow-lg hover:shadow-primary/50 transition-all duration-300" style="animation-delay: 0.4s;">
+            Resume
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button type="button" id="mobile-menu-btn" class="md:hidden p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all duration-300" aria-label="Toggle menu">
+          <svg class="h-5 w-5" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg class="h-5 w-5 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-nav" class="hidden md:hidden mt-4 pb-4 border-t border-border/50 pt-4 animate-fade-in-down">
+        <div class="flex flex-col gap-4">
+          <a href="#about" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 pl-2 border-l-2 border-transparent hover:border-primary hover:pl-4">
+            About
+          </a>
+          <a href="#solutions" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 pl-2 border-l-2 border-transparent hover:border-primary hover:pl-4">
+            Solutions
+          </a>
+          <a href="#projects" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 pl-2 border-l-2 border-transparent hover:border-primary hover:pl-4">
+            Projects
+          </a>
+          <a href="#blog" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 pl-2 border-l-2 border-transparent hover:border-primary hover:pl-4">
+            Blog
+          </a>
+          <a href="#faq" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 pl-2 border-l-2 border-transparent hover:border-primary hover:pl-4">
+            FAQ
+          </a>
+          <a href="#contact" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 pl-2 border-l-2 border-transparent hover:border-primary hover:pl-4">
+            Contact
+          </a>
+          <a href="rakibulhasanresume.pdf" class="w-fit px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
+            Resume
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center md:pt-20 pt-1 md:pb-16 pb-4 overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+          <div class="space-y-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+            <p class="text-primary font-mono text-sm tracking-wider uppercase">
+              Full-Stack Web Developer
+            </p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              Building digital experiences with modern web technologies
+            </h1>
+            <p class="text-lg text-muted-foreground leading-relaxed max-w-xl">
+              I'm Rakibul Hasan, a passionate developer specializing in <span class="text-primary font-semibold">JavaScript</span>, <span class="text-primary font-semibold">TypeScript</span>, and <span class="text-primary font-semibold">Next.js</span>. I craft performant, accessible, and visually stunning web applications.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-medium group">
+              View My Work
+              <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-border text-foreground rounded-lg hover:border-primary transition-all duration-300 font-medium">
+              Let's Talk
+            </a>
+          </div>
+
+          <div class="flex items-center gap-6 pt-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+            <a href="https://github.com/rakibulhasan933" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary hover:scale-110 transition-all duration-300" aria-label="GitHub">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/rakibulhossainrakib" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary hover:scale-110 transition-all duration-300" aria-label="LinkedIn">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.842 0-9.769h3.554v1.383c.43-.664 1.199-1.608 2.925-1.608 2.135 0 3.735 1.394 3.735 4.393v5.601zM5.337 8.855c-1.144 0-1.915-.759-1.915-1.71 0-.955.771-1.71 1.958-1.71 1.187 0 1.915.755 1.938 1.71 0 .951-.751 1.71-1.981 1.71zm1.581 11.597H3.635V9.683h3.283v10.769zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+              </svg>
+            </a>
+            <a href="https://x.com/rakibul_hasan80" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary hover:scale-110 transition-all duration-300" aria-label="Twitter">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex justify-center opacity-0 animate-fade-in-down" style="animation-delay: 0.4s;">
+          <div class="relative w-full max-w-md">
+            <div class="w-80 h-80 rounded-full bg-primary/10 absolute -inset-4 blur-3xl animate-glow"></div>
+            <div class="relative">
+              <div class="code-box animate-float">
+                <div><span class="keyword">const</span> <span class="property">developer</span> = {</div>
+                <div>&nbsp;&nbsp;<span class="property">name</span>: <span class="string">"Rakibul Hasan"</span>,</div>
+                <div>&nbsp;&nbsp;<span class="property">role</span>: <span class="string">"Full-Stack Developer"</span>,</div>
+                <div>&nbsp;&nbsp;<span class="property">skills</span>: [</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"JavaScript"</span>,</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"TypeScript"</span>,</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"React"</span>,</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Next.js"</span>,</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Node.js"</span>,</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"PostgreSQL"</span></div>
+                <div>&nbsp;&nbsp;],</div>
+                <div>&nbsp;&nbsp;<span class="property">passion</span>: <span class="string">"Building great UX"</span></div>
+                <div>}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="md:py-24 py-4 bg-card/50 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    <div class="container mx-auto px-6 relative">
+      <div class="max-w-3xl mb-16 opacity-0 animate-fade-in-up">
+        <p class="text-primary font-mono text-sm tracking-wider uppercase mb-4">
+          About Me
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          Crafting digital solutions with precision and creativity
+        </h2>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          I'm a developer passionate about creating accessible, performant web applications. My work lies at the intersection of design and engineering, building experiences that are not only visually appealing but also meticulously built for performance and usability.
+        </p>
+      </div>
+
+      <!-- Skills -->
+      <div class="grid md:grid-cols-3 md:gap-8 gap-4">
+        <div class="space-y-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+            Frontend
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              React
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              Next.js
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              TypeScript
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              Tailwind CSS
+            </span>
+          </div>
+        </div>
+
+        <div class="space-y-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+            Backend
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              Node.js
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              Express
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              PostgreSQL
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              MongoDB
+            </span>
+          </div>
+        </div>
+
+        <div class="space-y-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+          <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+            Tools
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              Git
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              Docker
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              AWS
+            </span>
+            <span class="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md border border-border hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 cursor-default">
+              Vercel
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section id="solutions" class="md:py-24 py-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none"></div>
+    <div class="container mx-auto px-6 relative">
+      <div class="max-w-3xl mx-auto text-center mb-20">
+        <p class="text-primary font-mono text-sm tracking-wider uppercase mb-4 opacity-0 animate-fade-in-up">
+          Complete Solutions
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+          A-Z Business Ready Solutions
+        </h2>
+        <p class="text-lg text-muted-foreground leading-relaxed opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+          From initial concept to production deployment and beyond, I provide comprehensive, business-ready solutions that cover every aspect of your digital product development. Full-stack expertise ensures seamless integration and optimal performance.
+        </p>
+      </div>
+
+      <!-- Solution Phases Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:mb-16 mb-8">
+        <div class="group bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 opacity-0 animate-fade-in-up" style="animation-delay: 0s;">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">📋</span>
+              <span class="text-sm font-mono text-primary font-bold">01</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+            Discovery & Planning
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+            Understanding your vision, goals, and requirements. Creating roadmaps and technical architecture.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Requirement Analysis
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Architecture Design
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Technology Stack Selection
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Project Timeline
+            </li>
+          </ul>
+        </div>
+
+        <div class="group bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🎨</span>
+              <span class="text-sm font-mono text-primary font-bold">02</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+            Frontend Development
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+            Building responsive, performant, and visually stunning user interfaces with modern frameworks.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              UI/UX Design
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              React/Next.js Development
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Component Architecture
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Performance Optimization
+            </li>
+          </ul>
+        </div>
+
+        <div class="group bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">⚙️</span>
+              <span class="text-sm font-mono text-primary font-bold">03</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+            Backend Development
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+            Creating scalable, secure, and efficient server-side solutions with robust APIs.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              API Development
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Database Design
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Authentication & Security
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Server Architecture
+            </li>
+          </ul>
+        </div>
+
+        <div class="group bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">✓</span>
+              <span class="text-sm font-mono text-primary font-bold">04</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+            Integration & Testing
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+            Connecting frontend and backend, ensuring quality through comprehensive testing.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              API Integration
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Unit Testing
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Integration Testing
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Quality Assurance
+            </li>
+          </ul>
+        </div>
+
+        <div class="group bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🚀</span>
+              <span class="text-sm font-mono text-primary font-bold">05</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+            Deployment & DevOps
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+            Setting up production environments with CI/CD pipelines and monitoring solutions.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Cloud Deployment
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              CI/CD Pipeline
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Performance Monitoring
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Infrastructure Setup
+            </li>
+          </ul>
+        </div>
+
+        <div class="group bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 opacity-0 animate-fade-in-up" style="animation-delay: 0.5s;">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">📞</span>
+              <span class="text-sm font-mono text-primary font-bold">06</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+            Maintenance & Support
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
+            Ongoing support, updates, and optimization to keep your application running smoothly.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Bug Fixes
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Feature Updates
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              Performance Monitoring
+            </li>
+            <li class="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              <svg class="h-4 w-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              24/7 Support
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="text-center opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
+        <p class="text-muted-foreground mb-4">
+          Ready to transform your idea into a fully functional, production-ready application?
+        </p>
+        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-medium">
+          Start Your Project
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="md:py-24 py-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+    <div class="container mx-auto px-6 relative">
+      <div class="max-w-3xl mb-12 opacity-0 animate-fade-in-up">
+        <p class="text-primary font-mono text-sm tracking-wider uppercase mb-4">
+          Selected Work
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          Projects I've built
+        </h2>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          A collection of projects that showcase my skills in building modern, scalable web applications. Each project represents unique challenges and creative solutions.
+        </p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="flex flex-wrap gap-2 md:mb-12 mb-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+        <button type="button" class="project-filter active px-4 py-2 text-sm rounded-lg transition-all duration-300 bg-primary text-primary-foreground shadow-lg shadow-primary/50" data-category="All">
+          All
+        </button>
+        <button type="button" class="project-filter px-4 py-2 text-sm rounded-lg transition-all duration-300 bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:border-primary/50" data-category="Web Apps">
+          Web Apps
+        </button>
+        <button type="button" class="project-filter px-4 py-2 text-sm rounded-lg transition-all duration-300 bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:border-primary/50" data-category="E-Commerce">
+          E-Commerce
+        </button>
+        <button type="button" class="project-filter px-4 py-2 text-sm rounded-lg transition-all duration-300 bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:border-primary/50" data-category="SaaS">
+          SaaS
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 gap-3">
+        <!-- Projects will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="md:py-24 py-4 bg-card/50 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    <div class="container mx-auto md:px-6 px-4 relative">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="max-w-2xl opacity-0 animate-fade-in-up">
+          <p class="text-primary font-mono text-sm tracking-wider uppercase mb-4">
+            Writing
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Thoughts on web development
+          </h2>
+          <p class="text-muted-foreground text-lg leading-relaxed">
+            I write about JavaScript, TypeScript, React, and modern web development practices. Sharing insights from building real-world applications.
+          </p>
+        </div>
+        <a href="/blog.html" class="inline-flex items-center gap-2 px-4 py-2 bg-transparent border border-border text-foreground rounded-lg hover:border-primary transition-all duration-300 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+          View All Posts
+          <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Featured Posts -->
+      <div id="blog-container" class="md:mb-12 mb-3 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+        <!-- Blog posts will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="md:py-24 py-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+    <div class="container mx-auto px-6 relative">
+      <!-- Header -->
+      <div class="max-w-3xl mb-12 opacity-0 animate-fade-in-up">
+        <p class="text-primary font-mono text-sm tracking-wider uppercase mb-4">
+          FAQ
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          Find answers to common questions about my services, process, and expertise. Can't find what you're looking for? Feel free to reach out directly.
+        </p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="flex flex-wrap gap-2 md:mb-12 mb-3 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+        <button type="button" class="faq-filter active px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary/50" data-category="All">
+          All
+        </button>
+        <button type="button" class="faq-filter px-4 py-2 bg-transparent border border-border text-foreground rounded-lg text-sm font-medium transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/50" data-category="Services">
+          Services
+        </button>
+        <button type="button" class="faq-filter px-4 py-2 bg-transparent border border-border text-foreground rounded-lg text-sm font-medium transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/50" data-category="Process">
+          Process
+        </button>
+        <button type="button" class="faq-filter px-4 py-2 bg-transparent border border-border text-foreground rounded-lg text-sm font-medium transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/50" data-category="Technical">
+          Technical
+        </button>
+      </div>
+
+      <!-- FAQ Items -->
+      <div id="faq-container" class="max-w-3xl opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+        <!-- FAQ items will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="md:py-24 py-4 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+    <div class="container mx-auto px-6 relative">
+      <div class="max-w-3xl mx-auto text-center mb-16 opacity-0 animate-fade-in-up">
+        <p class="text-primary font-mono text-sm tracking-wider uppercase mb-4">
+          Get in Touch
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          Let's work together
+        </h2>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          Have a project in mind? I'd love to hear about it. Whether you need a full-stack application, want to improve an existing product, or just want to say hi, feel free to reach out.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 md:gap-12 gap-4 max-w-5xl mx-auto">
+        <!-- Contact Info -->
+        <div class="md:space-y-8 space-y-4 opacity-0 animate-slide-in-left" style="animation-delay: 0.2s;">
+          <div class="flex items-start gap-4 group md:p-4 p-2 rounded-lg hover:bg-primary/5 transition-all duration-300">
+            <div class="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-foreground mb-1">Email</h3>
+              <a href="mailto:rakibulmd933@gmail.com" class="text-muted-foreground hover:text-primary transition-colors duration-300">
+                rakibulmd933@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 group md:p-4 p-2 rounded-lg hover:bg-primary/5 transition-all duration-300">
+            <div class="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+              <svg class="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-foreground mb-1">Location</h3>
+              <p class="text-muted-foreground">
+                Dhaka, Bangladesh (Remote Available)
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group">
+            <h3 class="font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+              Availability
+            </h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-4">
+              I'm currently available for freelance projects and full-time opportunities. My typical response time is within 24 hours.
+            </p>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span class="text-sm text-muted-foreground">
+                Available for new projects
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contact-form" class="md:space-y-6 space-y-3 opacity-0 animate-slide-in-right" style="animation-delay: 0.2s;">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="space-y-2">
+              <label for="name" class="text-sm font-medium text-foreground">Name</label>
+              <input type="text" id="name" placeholder="Your name" required class="w-full px-4 py-2 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300">
+            </div>
+            <div class="space-y-2">
+              <label for="email" class="text-sm font-medium text-foreground">Email</label>
+              <input type="email" id="email" placeholder="your@email.com" required class="w-full px-4 py-2 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300">
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="subject" class="text-sm font-medium text-foreground">Subject</label>
+            <input type="text" id="subject" placeholder="Project inquiry" required class="w-full px-4 py-2 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300">
+          </div>
+
+          <div class="space-y-2">
+            <label for="message" class="text-sm font-medium text-foreground">Message</label>
+            <textarea id="message" placeholder="Tell me about your project..." rows="5" required class="w-full px-4 py-2 bg-secondary border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 resize-none"></textarea>
+          </div>
+
+          <div id="success-message" class="p-4 bg-green-500/10 border border-green-500/20 rounded-lg animate-scale-in hidden">
+            <p class="text-green-500 text-sm font-medium">
+              Thanks for reaching out! I'll get back to you soon.
+            </p>
+          </div>
+
+          <button type="submit" class="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 font-medium flex items-center justify-center gap-2">
+            <span id="button-text">Send Message</span>
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-card/50 backdrop-blur-sm border-t border-border/50 hover:border-border transition-colors duration-300">
+    <div class="container mx-auto md:px-6 px-3 md:py-12 py-6">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <!-- Brand -->
+        <div class="space-y-4 opacity-0 animate-fade-in-up">
+          <a href="/" class="text-xl font-semibold text-foreground hover:text-primary transition-colors duration-300 inline-block">
+            Rakibul Hasan
+          </a>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Full-stack developer crafting digital experiences with modern web technologies.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex flex-wrap justify-center gap-6 opacity-0 animate-fade-in-down" style="animation-delay: 0.1s;">
+          <a href="#about" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group">
+            About
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="#projects" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group">
+            Projects
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="#blog" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group">
+            Blog
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="#contact" class="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative group">
+            Contact
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex md:justify-end justify-center gap-4 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+          <a href="https://github.com/rakibulhasan933" target="_blank" rel="noopener noreferrer" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300 hover:scale-110" aria-label="GitHub">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/rakibulhossainrakib" target="_blank" rel="noopener noreferrer" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.842 0-9.769h3.554v1.383c.43-.664 1.199-1.608 2.925-1.608 2.135 0 3.735 1.394 3.735 4.393v5.601zM5.337 8.855c-1.144 0-1.915-.759-1.915-1.71 0-.955.771-1.71 1.958-1.71 1.187 0 1.915.755 1.938 1.71 0 .951-.751 1.71-1.981 1.71zm1.581 11.597H3.635V9.683h3.283v10.769zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+            </svg>
+          </a>
+          <a href="https://x.com/rakibul_hasan80" target="_blank" rel="noopener noreferrer" class="p-2 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300 hover:scale-110" aria-label="Twitter">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-border/50 md:mt-8 mt-4 md:pt-8 pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-muted-foreground opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+          © <span id="year"></span> Rakibul Hasan. All rights reserved.
+        </p>
+        <p class="text-sm text-muted-foreground opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+          Built with <span class="text-primary font-semibold">HTML</span> & <span class="text-primary font-semibold">Tailwind CSS</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Chatbot Widget -->
+  <div id="chatbot" class="fixed bottom-4 right-4 z-40">
+    <button id="chatbot-toggle" class="w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl hover:shadow-primary/50 flex items-center justify-center transition-all duration-300 hover:scale-110">
+      <svg id="chat-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+      <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <div id="chatbot-window" class="hidden absolute bottom-20 right-0 w-96 h-96 bg-card border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+      <div class="bg-primary text-primary-foreground p-4 flex justify-between items-center">
+        <h3 class="font-semibold">Rakibul's Assistant</h3>
+        <button id="chatbot-close" class="text-primary-foreground hover:opacity-80 transition">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div id="chatbot-messages" class="flex-1 overflow-y-auto p-4 space-y-3">
+        <div class="flex gap-2">
+          <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+            <span class="text-xs">🤖</span>
+          </div>
+          <div class="bg-secondary text-secondary-foreground rounded-lg p-3 text-sm max-w-xs">
+            Hi! I'm Rakibul's AI assistant. How can I help you today?
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-border p-4 flex gap-2">
+        <input type="text" id="chatbot-input" placeholder="Type your message..." class="flex-1 px-3 py-2 bg-secondary border border-border rounded-lg text-sm text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50">
+        <button id="chatbot-send" class="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,1.16865566 C3.50612381,0.9115583 2.40999916,1.0216797 1.77946707,1.4929718 C0.994623095,2.16346742 0.837654326,3.25286605 1.15159189,3.99619781 L3.03521743,10.4371908 C3.03521743,10.5472992 3.34915502,10.7043965 3.50612381,10.7043965 L16.6915026,11.4898834 C16.6915026,11.4898834 17.1624089,11.4898834 17.1624089,11.0185913 L17.1624089,12.4744748 C17.1624089,11.4898834 16.6915026,12.4744748 16.6915026,12.4744748 Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Script -->
+  <script>
+    // Projects Data
+    const projectsData = [
+      {
+        title: "Mumo Travels & Tours",
+        description: "A modern travel booking platform with AI-powered recommendations, real-time availability, and seamless payment integration.",
+        image: "https://i.ibb.co.com/8L272W4w/Screenshot-248.png",
+        category: "Web Apps",
+        technologies: ["Next.js", "TypeScript", "GraphQL", "Stripe"],
+        liveUrl: "https://mumotravels.com",
+        featured: true,
+      },
+      {
+        title: "Arafat Foundation",
+        description: "A concise, portfolio-ready snapshot of the Arafat Foundation website — a modern, accessible web presence for a community foundation focused on local impact.",
+        image: "https://i.ibb.co.com/MxcwfcKn/project-1.png",
+        category: "Web Apps",
+        technologies: ["Next.js", "TypeScript", "MongoDB", "Tailwind CSS"],
+        liveUrl: "https://arafatfoundation.org",
+        featured: true,
+      },
+      {
+        title: "Atelier Store",
+        description: "It demonstrates product listing, product detail pages, a responsive header with a mobile sheet menu, and a persistent client-side shopping cart.",
+        image: "https://i.ibb.co.com/rfKw44pk/Screenshot-187.png",
+        category: "E-Commerce",
+        technologies: ["Next.js", "Sanity", "Stripe", "Vercel"],
+        liveUrl: "https://atelier-store.vercel.app",
+        featured: true,
+      },
+      {
+        title: "AI MCQ Generator & Test Platform",
+        description: "An AI-powered multiple-choice question platform designed for Bangladesh job preparation exams. Generates high-quality, contextually accurate MCQs with well-reasoned explanations.",
+        image: "https://i.ibb.co.com/Ngxd4YL9/Screenshot-189.png",
+        category: "SaaS",
+        technologies: ["React", "OpenAI", "Node.js", "MongoDB"],
+        liveUrl: "https://jobpreai.vercel.app",
+        featured: true,
+      },
+      {
+        title: "FreePlanTour",
+        description: "FreePlanTour is a travel planning web platform that helps users explore destinations and generate ready-made travel itineraries.",
+        image: "https://i.ibb.co.com/9yqZTJ8/Screenshot-2024-07-15-182540.png",
+        category: "SaaS",
+        technologies: ["Next.js", "OpenAI", "Tailwind CSS", "Firebase"],
+        liveUrl: "https://www.freeplantour.com",
+        featured: false,
+      },
+      {
+        title: "FreelancerMarriage",
+        description: "FreelancerMarriage is an online matrimony platform designed to connect individuals seeking serious relationships and life partners.",
+        image: "https://i.ibb.co.com/N299jjrG/image.png",
+        category: "Web Apps",
+        technologies: ["TypeScript", "Node.js", "Neon", "Drizzle ORM", "Clerk"],
+        liveUrl: "https://freelancermarriage.com",
+        featured: false,
+      }
+    ];
+
+    // FAQ Data
+    const faqData = [
+      {
+        id: "faq-1",
+        category: "Services",
+        question: "What services do you offer?",
+        answer: "I offer a comprehensive range of full-stack development services including frontend and backend development, API design, database architecture, deployment, and ongoing maintenance. I specialize in JavaScript, TypeScript, React, Next.js, and Node.js.",
+      },
+      {
+        id: "faq-2",
+        category: "Services",
+        question: "Do you offer mobile app development?",
+        answer: "While my primary focus is web development, I can develop cross-platform mobile applications using React Native. For native iOS or Android development, I recommend consulting with specialized mobile developers.",
+      },
+      {
+        id: "faq-3",
+        category: "Process",
+        question: "What's your typical project process?",
+        answer: "My process includes discovery & planning, requirement analysis, architecture design, frontend development, backend development, testing, deployment, and post-launch support. I maintain regular communication throughout and deliver updates at key milestones.",
+      },
+      {
+        id: "faq-4",
+        category: "Process",
+        question: "How long does a typical project take?",
+        answer: "Project timelines vary based on complexity and scope. A simple website might take 2-4 weeks, while a full-featured web application could take 2-4 months. I provide detailed timelines after the discovery phase.",
+      },
+      {
+        id: "faq-5",
+        category: "Technical",
+        question: "What technologies do you work with?",
+        answer: "I work with modern JavaScript frameworks (React, Next.js), TypeScript, Node.js, Express, PostgreSQL, MongoDB, Tailwind CSS, and various cloud platforms like AWS and Vercel. I'm always learning new technologies to stay current.",
+      },
+      {
+        id: "faq-6",
+        category: "Technical",
+        question: "Do you offer SEO optimization?",
+        answer: "Yes, I implement SEO best practices including meta tags, structured data, fast loading times, mobile responsiveness, and clean semantic HTML. For Next.js projects, I leverage server-side rendering and static generation for optimal SEO.",
+      }
+    ];
+
+    // Blog Posts Data
+    const blogPostsData = [
+      {
+        title: "Building Scalable APIs with Next.js Server Actions",
+        excerpt: "Explore how to leverage Next.js 14 server actions to build type-safe, performant APIs without the complexity of traditional REST endpoints.",
+        category: "Next.js",
+        date: "2025-01-15",
+        readTime: "8 min read",
+        slug: "building-scalable-apis",
+        image: "https://i.ibb.co.com/zGSvX2s/blog-api.jpg"
+      },
+      {
+        title: "TypeScript Best Practices for Large-Scale Applications",
+        excerpt: "A comprehensive guide to writing maintainable TypeScript code in enterprise applications, covering patterns, tooling, and common pitfalls.",
+        category: "TypeScript",
+        date: "2025-01-08",
+        readTime: "12 min read",
+        slug: "typescript-best-practices",
+        image: "https://i.ibb.co.com/h1JVWLL/blog-typescript.jpg"
+      },
+      {
+        title: "React Performance Optimization Tips",
+        excerpt: "Learn essential techniques to optimize your React applications for better performance, from code splitting to memoization strategies.",
+        category: "React",
+        date: "2024-12-28",
+        readTime: "10 min read",
+        slug: "react-performance",
+        image: "https://i.ibb.co.com/zQ8tVyC/blog-react.jpg"
+      }
+    ];
+  </script>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
