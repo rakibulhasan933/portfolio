@@ -4,7 +4,15 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+        port: '',
+      },
+    ],
+    qualities: [100],
+    formats: ['image/avif', 'image/webp'],
   },
 }
 
