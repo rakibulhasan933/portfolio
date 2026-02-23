@@ -13,6 +13,7 @@ const nextConfig = {
     ],
     qualities: [100],
     formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 2678400, // 31 days
   },
 }
 
