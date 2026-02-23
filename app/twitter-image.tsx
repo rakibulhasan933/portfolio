@@ -83,7 +83,7 @@ export default async function Image() {
                     }}
                 >
                     <img
-                        src="/rakibul-profile-pictures.jpg"
+                        src="https://ubj396rs5z.ufs.sh/f/fTLq8Go790CI3SCPJ4Uxd1Ok5ctuACpBaKzQUmsJlYWnoEje"
                         width="380"
                         height="380"
                         style={{
