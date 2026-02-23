@@ -17,6 +17,7 @@ export default async function Image() {
                     width: '100%',
                     height: '100%',
                     display: 'flex',
+                    flexDirection: 'row',
                     background: 'linear-gradient(135deg, #0f172a, #1e293b)',
                     color: 'white',
                     padding: '80px',
@@ -27,18 +28,25 @@ export default async function Image() {
                 {/* LEFT CONTENT */}
                 <div
                     style={{
-                        flex: 1,
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'center',
+                        flex: 1,
                     }}
                 >
-                    <div style={{ fontSize: 80, fontWeight: 800 }}>
+                    <div
+                        style={{
+                            display: 'flex',
+                            fontSize: 80,
+                            fontWeight: 800,
+                        }}
+                    >
                         Rakibul Hasan
                     </div>
 
                     <div
                         style={{
+                            display: 'flex',
                             fontSize: 42,
                             marginTop: 20,
                             color: '#38bdf8',
@@ -50,18 +58,19 @@ export default async function Image() {
 
                     <div
                         style={{
+                            display: 'flex',
                             fontSize: 28,
                             marginTop: 30,
                             opacity: 0.85,
                             maxWidth: 700,
                         }}
                     >
-                        Building scalable, high-performance web applications
-                        with clean and modern architecture.
+                        Building scalable, high-performance web applications with clean and modern architecture.
                     </div>
 
                     <div
                         style={{
+                            display: 'flex',
                             fontSize: 24,
                             marginTop: 40,
                             opacity: 0.7,
@@ -74,6 +83,7 @@ export default async function Image() {
                 {/* RIGHT PHOTO */}
                 <div
                     style={{
+                        display: 'flex',
                         width: 380,
                         height: 380,
                         borderRadius: '50%',
@@ -83,7 +93,7 @@ export default async function Image() {
                     }}
                 >
                     <img
-                        src="/rakibul-profile-pictures.jpg"
+                        src="https://ubj396rs5z.ufs.sh/f/fTLq8Go790CI3SCPJ4Uxd1Ok5ctuACpBaKzQUmsJlYWnoEje"
                         width="380"
                         height="380"
                         style={{
