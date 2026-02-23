@@ -14,7 +14,6 @@ export default function HomePage() {
       <AboutSection />
       <CompleteSolutionsSection />
       <ProjectsSection />
-      <BlogSection />
       <FAQSection />
       <ContactSection />
       <AIChatbot />
